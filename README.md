@@ -6,6 +6,7 @@ Community Makerはコミュニティを作りたい人と、コミュニティ�
 
 開発言語
 Ruby 2.6.5
+
 Ruby on Rails 5.2.6
 
 就業Term内で取り入れる技術
