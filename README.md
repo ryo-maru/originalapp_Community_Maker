@@ -1,6 +1,6 @@
 Community Makerについて
 
-自分の人生にコミュニティを1つ追加しませんか？	
+自分の人生にコミュニティを1つ追加しませんか？
 
 Community Makerはコミュニティを作りたい人と、コミュニティに参加したい人をマッチングさせるアプリです。
 
@@ -32,15 +32,14 @@ $ rails s
 
 カタログ設計 & テーブル定義書
 
-https://docs.google.com/spreadsheets/d/1tR8hbfO2SB3YpqlvaVjIZDsG-JC9Yschr6yfXQJbA0k/edit#gid=782464957
-
+https://docs.google.com/spreadsheets/d/1tR8hbfO2SB3YpqlvaVjIZDsG-JC9Yschr6yfXQJbA0k/edit?usp=sharing
 ER図
 
-https://cacoo.com/diagrams/tqQaPsUGTJPhKVNj/B88F5?reload_rt=1628425392235_0&
+https://cacoo.com/diagrams/tqQaPsUGTJPhKVNj/B88F5
 
 画面遷移図
 
-https://cacoo.com/diagrams/IKTDO3w7sKKDZ6a6/240CA?reload_rt=1628425394189_0&
+https://cacoo.com/diagrams/IKTDO3w7sKKDZ6a6/240CA
 
 ワイヤーフレーム
 
