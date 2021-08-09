@@ -4,6 +4,12 @@
 
 Community Makerはコミュニティを作りたい人と、コミュニティに参加したい人をマッチングさせるアプリです。
 
+しかし！このコミュニティ掲示板は30コメントに達すると自動的に消滅してしまう！
+
+30コメントに達する前に、集まった仲間をLine,mixi,TwitterなどのSNSに誘導してコミュニティを継続させよう！！
+
+ゲーム感覚でコミュニティを自由に作り、楽しんで頂きたいです。
+
 # 開発言語
 
 ・Ruby 2.6.5
@@ -22,13 +28,9 @@ Community Makerはコミュニティを作りたい人と、コミュニティ�
 # 本アプリの実行手順
 
     $ git clone git@github.com:ryo-maru/originalapp_Community_Maker.git
-
     $ cd originalapp_Community_Maker
-
     $ bundle install
-
     $ rails db:create db:migrate
-    
     $ rails s
 
 # カタログ設計 & テーブル定義書
