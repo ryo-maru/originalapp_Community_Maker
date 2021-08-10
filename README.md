@@ -35,7 +35,7 @@ Community Makerはコミュニティを作りたい人と、コミュニティ�
 
 # カタログ設計 & テーブル定義書
 
-https://docs.google.com/spreadsheets/u/0/d/1tR8hbfO2SB3YpqlvaVjIZDsG-JC9Yschr6yfXQJbA0k/htmlview
+https://docs.google.com/spreadsheets/d/1tR8hbfO2SB3YpqlvaVjIZDsG-JC9Yschr6yfXQJbA0k/edit?usp=sharing
 
 # ER図
 
