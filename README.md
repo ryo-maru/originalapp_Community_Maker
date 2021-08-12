@@ -50,7 +50,7 @@ https://cacoo.com/diagrams/tqQaPsUGTJPhKVNj/B88F5
 
 https://cacoo.com/diagrams/IKTDO3w7sKKDZ6a6/240CA
 
-<img width="1440" alt="スクリーンショット 2021-08-12 13 53 52" src="https://user-images.githubusercontent.com/60056192/129142985-043963d0-692f-4a70-a218-2b4812922202.png">
+<img width="1440" alt="スクリーンショット 2021-08-12 20 34 34" src="https://user-images.githubusercontent.com/60056192/129190285-cb40f476-e74e-4e4f-ae3d-b477241307ae.png">
 
 
 
