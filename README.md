@@ -41,9 +41,18 @@ https://docs.google.com/spreadsheets/d/1tR8hbfO2SB3YpqlvaVjIZDsG-JC9Yschr6yfXQJb
 
 https://cacoo.com/diagrams/tqQaPsUGTJPhKVNj/B88F5
 
+<img width="1440" alt="スクリーンショット 2021-08-12 13 55 08" src="https://user-images.githubusercontent.com/60056192/129142900-9f3b2d11-9741-4aee-9af1-27f7f4d6a714.png">
+
+
+
+
 # 画面遷移図
 
 https://cacoo.com/diagrams/IKTDO3w7sKKDZ6a6/240CA
+
+<img width="1440" alt="スクリーンショット 2021-08-12 13 53 52" src="https://user-images.githubusercontent.com/60056192/129142985-043963d0-692f-4a70-a218-2b4812922202.png">
+
+
 
 # ワイヤーフレーム
 
