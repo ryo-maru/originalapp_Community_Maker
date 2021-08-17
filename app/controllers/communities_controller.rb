@@ -9,6 +9,8 @@ class CommunitiesController < ApplicationController
 
   # GET /communities/1 or /communities/1.json
   def show
+    @comments = @community.comments
+    @comment = @community.comments.build
   end
 
   # GET /communities/new
@@ -66,6 +68,6 @@ class CommunitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def community_params
-      params.require(:community).permit(:name, :description, :user_id, :user_name ).merge(user_id: current_user.id)
+      params.require(:community).permit(:name, :description, :user_id, :user_name).merge(user_id: current_user.id)
     end
 end
