@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :communities
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
   root 'tops#index'
+  resources :users, only: [:new, :create]
 end

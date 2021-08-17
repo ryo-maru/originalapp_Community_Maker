@@ -1,6 +1,6 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: %i[ show edit update destroy ]
-  #before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   # GET /communities or /communities.json
   def index
@@ -66,6 +66,6 @@ class CommunitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def community_params
-      params.require(:community).permit(:name, :description)
+      params.require(:community).permit(:name, :description, :user_id, :user_name ).merge(user_id: current_user.id)
     end
 end
