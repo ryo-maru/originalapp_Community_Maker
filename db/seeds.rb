@@ -51,3 +51,33 @@ Community.create!(
  description: "犬好き集まれ！猫好きももちろん",
  user_id: 6
 )
+
+Comment.create!(
+ community_id: 2,
+ content: "面白そう！！",
+ user_id: 2
+)
+
+Comment.create!(
+ community_id: 1,
+ content: "前から気になってたんだよねこれ",
+ user_id: 1
+)
+
+Comment.create!(
+ community_id: 3,
+ content: "参加キボンヌ",
+ user_id: 3
+)
+
+Comment.create!(
+ community_id: 4,
+ content: "僕でよかったらいつでも参加できます",
+ user_id: 4
+)
+
+Comment.create!(
+ community_id: 5,
+ content: "友達増やしたいです",
+ user_id: 5
+)
