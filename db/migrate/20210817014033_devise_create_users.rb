@@ -6,7 +6,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       ## User profile
       t.string :name, null: false, default: ""
       t.string :image
-      t.string :description, null: false, default: ""
+      t.string :descriptions
 
       ## Database authenticatable
       t.string :email,              null: false, default: ""
@@ -17,7 +17,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.datetime :reset_password_sent_at
 
       ## Rememberable
-      t.datetime :remember_created_at
+      t.datetime :remember_created_ats
 
       ## Trackable
        t.integer  :sign_in_count, default: 0, null: false

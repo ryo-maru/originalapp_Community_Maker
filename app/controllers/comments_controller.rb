@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_community, only: [:create, :edit, :update]
-
+  before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   def create
     # Blogをパラメータの値から探し出し,Blogに紐づくcommentsとしてbuildします。
     @community = Community.find(params[:community_id])

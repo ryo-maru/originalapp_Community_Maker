@@ -1,0 +1,13 @@
+<h3>以下の内容で、コミュニティを作成する。</h3>
+<%= form_with(model: @community, local: true) do |form| %>
+  <%= form.hidden_field :name %>
+  <%= form.hidden_field :description %>
+  <p>コミュニティ名:<%= @community.name %></p>
+  <p>コミュニティ説明:<%= @community.description %></p>
+  <%= form.submit  "コミュニティを作成する" %>
+  <br>
+  <br>
+  <%= link_to 'コミュニティ一覧へ戻る', communities_path %>
+
+
+<% end %>

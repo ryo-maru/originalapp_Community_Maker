@@ -11,11 +11,14 @@
 
   <body>
     <% if user_signed_in? %>
-      <%= link_to "コミュニティ作成", communities_path %>
+      <%= link_to "コミュニティ一覧", communities_path %>
+      <%= link_to "マイページ", user_path(current_user.id) %>
+      <%= link_to "コミュニティを作る", new_community_path %>
+
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to "新規登録", new_user_registration_path %>
-      <%= link_to "ログイン", new_user_session_path %>
+      <%= link_to "Top", root_path %>
+
     <% end %>
 
     <% if notice %>

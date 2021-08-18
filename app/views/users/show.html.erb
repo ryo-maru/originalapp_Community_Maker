@@ -1,0 +1,10 @@
+<h1><%= @user.name %>さんのページ</h1>
+<p>メールアドレス: <%= @user.email %></p>
+<br>
+<p>プロフィール画像： <%= image_tag(@user.image.url) if @user.image && @user.image.url %></p>
+<td>自己紹介<%= @user.descriptions %></td>
+<div>
+  <%= link_to 'プロフィール編集', edit_user_registration_path %>
+</div>
+<br>
+<%= link_to 'コミュニティ一覧へ戻る', communities_path %>

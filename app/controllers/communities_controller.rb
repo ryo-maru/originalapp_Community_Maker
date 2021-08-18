@@ -25,11 +25,13 @@ class CommunitiesController < ApplicationController
   # POST /communities or /communities.json
   def create
     @community = Community.new(community_params)
+    @community.admin_id = current_user.id
+
 
     respond_to do |format|
       if @community.save
         CommunityMailer.community_mail(@community).deliver  ##追記
-        format.html { redirect_to @community, notice: "Community was successfully created." }
+        format.html { redirect_to communities_path, notice: "コミュニティを作成しました" }
         format.json { render :show, status: :created, location: @community }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +44,7 @@ class CommunitiesController < ApplicationController
   def update
     respond_to do |format|
       if @community.update(community_params)
-        format.html { redirect_to @community, notice: "Community was successfully updated." }
+        format.html { redirect_to @community, notice: "コミュニティを編集しました" }
         format.json { render :show, status: :ok, location: @community }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -55,9 +57,14 @@ class CommunitiesController < ApplicationController
   def destroy
     @community.destroy
     respond_to do |format|
-      format.html { redirect_to communities_url, notice: "Community was successfully destroyed." }
+      format.html { redirect_to communities_url, notice: "コミュニティを削除しました" }
       format.json { head :no_content }
     end
+  end
+
+  def confirm
+    @community = Community.new(community_params)
+    render :new if @community.invalid?
   end
 
   private
