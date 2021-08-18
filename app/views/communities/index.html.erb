@@ -18,6 +18,7 @@
         <td><%= community.description %></td>
         <td><%= community.user.name %></td>
         <td><%= community.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        
 
         <td><%= link_to '詳細', community %></td>
          <% if community.user == current_user %>

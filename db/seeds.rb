@@ -5,3 +5,49 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+5.times do |n|
+  name = Faker::Games::Pokemon.name
+  email = Faker::Internet.email
+  password = "password"
+  User.create!(name: name,
+               email: email,
+               password: password,
+               )
+end
+
+User.create!(
+  name: "管理者",
+  email: "admin@example.jp" ,
+  password: "password01",
+  admin: true
+ )
+
+ Community.create!(
+  name: "野球小僧",
+  description: "野球好き集まれ",
+  user_id: 2
+)
+
+Community.create!(
+ name: "ラーメン大好き",
+ description: "ラーメン好き集まれ",
+ user_id: 3
+)
+
+Community.create!(
+ name: "進撃の巨人好き",
+ description: "連載終わって寂しい人",
+ user_id: 4
+)
+
+Community.create!(
+ name: "競馬好き",
+ description: "秋のG1について語ろう",
+ user_id: 5
+)
+
+Community.create!(
+ name: "犬好き",
+ description: "犬好き集まれ！猫好きももちろん",
+ user_id: 6
+)
