@@ -11,6 +11,8 @@ class CommunitiesController < ApplicationController
   def show
     @comments = @community.comments
     @comment = @community.comments.build
+    @favorite = current_user.favorites.find_by(community_id: @community.id)
+    @member = current_user.members.find_by(community_id: @community.id)
   end
 
   # GET /communities/new
@@ -25,7 +27,7 @@ class CommunitiesController < ApplicationController
   # POST /communities or /communities.json
   def create
     @community = Community.new(community_params)
-  
+
 
 
     respond_to do |format|

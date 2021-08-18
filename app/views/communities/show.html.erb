@@ -9,6 +9,22 @@
   <%= @community.description %>
 </p>
 
+<% unless @community.user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'いいね解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'いいね', favorites_path(community_id: @community.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
+
+<% unless @community.user_id == current_user.id %>
+  <% if @member.present? %>
+    <%= link_to '退会する', member_path(id: @member.id), method: :delete, class: 'btn btn-warning' %>
+  <% else %>
+    <%= link_to '参加する', members_path(community_id: @community.id), method: :post, class: 'btn btn-success' %>
+  <% end %>
+<% end %>
+
 <p>コメント一覧</p>
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
   <div id="comments_area">

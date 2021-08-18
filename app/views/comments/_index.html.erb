@@ -18,8 +18,8 @@
         <td><%= comment.user.name %></td>
         <td><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></td>
         <% if comment.user == current_user %>
-        <td><%= link_to "編集", edit_community_comment_path(community, comment), remote: true %></td>
-        <td><%= link_to "削除", community_comment_path(comment.community_id, comment.id), method: :delete, remote: true,
+        <td><%= link_to "編集", edit_community_comment_path(community, comment),remote: true %></td>
+        <td><%= link_to "削除", community_comment_path(comment.community_id, comment.id),method: :delete, remote: true,
                                        data: { confirm: "本当に削除しますか?"} %></td>
         <% end %>
       </tr>

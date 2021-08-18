@@ -13,8 +13,8 @@
     <% if user_signed_in? %>
       <%= link_to "コミュニティ一覧", communities_path %>
       <%= link_to "マイページ", user_path(current_user.id) %>
-      <%= link_to "コミュニティを作る", new_community_path %>
-
+      <%= link_to "お気に入り一覧", favorites_path %>
+      <%= link_to "参加コミュニティ一覧", members_path %>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     <% else %>
       <%= link_to "Top", root_path %>

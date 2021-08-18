@@ -18,19 +18,24 @@
         <td><%= community.description %></td>
         <td><%= community.user.name %></td>
         <td><%= community.created_at.strftime("%Y-%m-%d %H:%M") %></td>
-        
 
-        <td><%= link_to '詳細', community %></td>
+
+
+
+        <td><%= link_to '詳しく', community,class: 'btn btn-info' %></td>
          <% if community.user == current_user %>
-        <td><%= link_to '編集', edit_community_path(community) %></td>
-        <td><%= link_to '削除', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '編集', edit_community_path(community), class: 'btn btn-success' %></td>
+        <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>
+
+
+
   </tbody>
 </table>
 
 <br>
 
 
-<%= link_to 'New Community', new_community_path %>
+<%= link_to 'コミュニティを作る', new_community_path %>
