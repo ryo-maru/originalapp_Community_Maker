@@ -1,6 +1,7 @@
 class CommunitiesController < ApplicationController
   before_action :set_community, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
+  before_action :set_q, only: [:index, :search]
 
   # GET /communities or /communities.json
   def index
@@ -27,9 +28,6 @@ class CommunitiesController < ApplicationController
   # POST /communities or /communities.json
   def create
     @community = Community.new(community_params)
-
-
-
     respond_to do |format|
       if @community.save
         CommunityMailer.community_mail(@community).deliver  ##追記
@@ -69,6 +67,12 @@ class CommunitiesController < ApplicationController
     render :new if @community.invalid?
   end
 
+  def search
+    @results = @q.result
+    #@results = @results.page(params[:page]).per(5)
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_community
@@ -78,5 +82,9 @@ class CommunitiesController < ApplicationController
     # Only allow a list of trusted parameters through.
     def community_params
       params.require(:community).permit(:name, :description, :user_id, :user_name).merge(user_id: current_user.id)
+    end
+
+    def set_q
+      @q = Community.ransack(params[:q])
     end
 end

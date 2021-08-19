@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+<% if current_user.present? %>
+  <p>こんにちは、<%= current_user.name %>さん！</p>
+<% end %>
   <head>
     <title>Community Maker</title>
     <%= csrf_meta_tags %>
@@ -10,17 +13,56 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <%= link_to "コミュニティ一覧", communities_path %>
-      <%= link_to "マイページ", user_path(current_user.id) %>
-      <%= link_to "お気に入り一覧", favorites_path %>
-      <%= link_to "参加コミュニティ一覧", members_path %>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Top", root_path %>
-      <%= link_to "コミュニティを見てみる", communities_path %>
+    <header>
+      <% if user_signed_in? %>
+      <nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample2">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">
+				<img alt="ロゴ"  style="height: 20px;">
+			</a>
+		</div>
 
-    <% end %>
+		<div class="collapse navbar-collapse" id="navbarEexample2">
+			<ul class="nav navbar-nav navbar-right">
+				<li><%= link_to "コミュニティ一覧", communities_path %></li>
+				<li><%= link_to "マイページ", user_path(current_user.id) %></li>
+				<li><%= link_to "お気に入り一覧", favorites_path %></li>
+				<li><%= link_to "参加コミュニティ一覧", members_path %></li>
+				<li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+      </ul>
+      <nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample2">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">
+				<img alt="ロゴ" style="height: 20px;">
+			</a>
+		</div>
+      <div class="collapse navbar-collapse" id="navbarEexample2">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Top", root_path %></li>
+        <li><%= link_to "コミュニティを見てみる", communities_path %></li>
+        <% end %>
+			</ul>
+		</div>
+    </div>
+	</div>
+</nav>
+    </header>
+
 
     <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>

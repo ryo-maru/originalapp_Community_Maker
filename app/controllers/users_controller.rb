@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update]
+
+
   def show
     @user = User.find(params[:id])
   end
@@ -20,6 +22,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def image
+    @users = User.where(user_id: current_user.id).where.not(image: nil)
+  end
+
 
 
   private
@@ -31,4 +37,7 @@ class UsersController < ApplicationController
   def user_params
   params.require(:user).permit(:name, :email, :image, :image_cache, :description)
   end
+
+
+
 end

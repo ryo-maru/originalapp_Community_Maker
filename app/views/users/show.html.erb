@@ -1,5 +1,8 @@
 <h1><%= @user.name %>さんのページ</h1>
+  <%= image_tag @user.image.url,class:"rounded-circle", size: "200x200" %>
 <p>メールアドレス: <%= @user.email %></p>
+<p>自己紹介: <%= @user.description %></p>
+
 <% if current_user.admin?%>
 <h3><%= link_to '管理者画面へ移動' , rails_admin_path, class: 'btn btn-default' %></h3>
 <% end %>

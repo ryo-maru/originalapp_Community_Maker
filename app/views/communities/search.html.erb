@@ -1,12 +1,4 @@
-
-<h1>Communities</h1>
-
-<%= search_form_for @q, url: search_communities_path do |f| %>
-  <%= f.label :name_cont, 'コミュニティ名で検索' %>
-  <%= f.search_field :name_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
+<h1>コミュニティ検索結果</h1>
 
 <table class="table table-hover">
   <thead>
@@ -19,7 +11,7 @@
   </thead>
 
   <tbody>
-    <% @communities.each do |community| %>
+    <% @results.each do |community| %>
       <tr>
         <td><%= community.name %></td>
         <td><%= community.description %></td>
@@ -40,7 +32,4 @@
   </tbody>
 </table>
 
-<br>
-
-
-<%= link_to 'コミュニティを作る', new_community_path, class: 'btn btn-default' %>
+<%= link_to "コミュニティ一覧へ戻る", communities_path %>

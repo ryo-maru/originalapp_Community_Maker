@@ -12,6 +12,9 @@
   User.create!(name: name,
                email: email,
                password: password,
+               image: open("./db/fixtures/image#{1}.jpeg")
+               #image:File.open("./public/images/tamago.jpeg"),
+               #image: open("#{Rails.root}/db/fixtures/tamago.jpg")
                )
 end
 
@@ -19,7 +22,10 @@ User.create!(
   name: "管理者",
   email: "admin@example.jp" ,
   password: "password01",
-  admin: true
+  admin: true,
+  image: open("./db/fixtures/image1.jpeg")
+  #image:File.open("./public/images/tamago.jpeg")
+  #image: open("#{Rails.root}/db/fixtures/tamago.jpg")
  )
 
  Community.create!(

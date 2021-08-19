@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   resources :communities do
     collection do
       post :confirm
-    end
+      get 'search'
+  end
 
     resources :comments
   end
