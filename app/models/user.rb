@@ -10,6 +10,10 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_one_attached :avatar
   validates :image, presence: true
+  validates :name,length: { in: 1..75 }
+  validates :email,length: { in: 6..30 }
+  validates :password_digest,length: { in: 6..30 }
+  validates :description,length: { in: 1..300 }
 
 
   def self.guest
