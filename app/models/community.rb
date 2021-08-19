@@ -6,4 +6,6 @@ class Community < ApplicationRecord
   has_many :members, dependent: :destroy
   has_many :member_users, through: :members, source: :user
   mount_uploader :image, ImageUploader
+  validates :name, presence: true
+  validates :description, presence: true
 end
