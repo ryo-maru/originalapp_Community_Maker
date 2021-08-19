@@ -11,6 +11,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
    end
  end
 
+ private
+
+  def sign_up_params
+    # ここに :age, :genderを追記
+    params.permit(:name, :email,:password, :password_confirmation, :description)
+  end
+
+  def account_update_params
+    params.permit(:name, :email, :description)
+  end
+end
+
+
   # GET /resource/sign_up
   # def new
   #   super
@@ -66,4 +79,3 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
-end

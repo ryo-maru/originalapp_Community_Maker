@@ -47,7 +47,7 @@ class CommentsController < ApplicationController
   private
   # ストロングパラメーター
   def comment_params
-    params.require(:comment).permit(:community_id, :content, :user_id, :user_name).merge(user_id: current_user.id)
+    params.require(:comment).permit(:community_id, :content, :user_id, :user_name, :name, :description).merge(user_id: current_user.id)
   end
 
   def set_community

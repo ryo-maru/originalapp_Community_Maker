@@ -8,6 +8,12 @@ class Users::SessionsController < Devise::SessionsController
     redirect_to communities_path, notice: 'ゲストユーザーとしてログインしました。'
   end
 
+  def guest_admin_sign_in
+    user = User.guest_admin
+    sign_in user
+    redirect_to communities_path, notice: 'ゲストユーザー（管理者）としてログインしました。'
+  end
+
 
   # GET /resource/sign_in
   # def new

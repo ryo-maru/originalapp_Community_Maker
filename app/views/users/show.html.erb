@@ -1,10 +1,10 @@
 <h1><%= @user.name %>さんのページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
-<br>
-<p>プロフィール画像： <%= image_tag(@user.image.url) if @user.image && @user.image.url %></p>
-<td>自己紹介<%= @user.description %></td>
+<% if current_user.admin?%>
+<h3><%= link_to '管理者画面へ移動' , rails_admin_path, class: 'btn btn-default' %></h3>
+<% end %>
 <div>
-  <%= link_to 'プロフィール編集', edit_user_registration_path %>
+  <%= link_to 'プロフィール編集', edit_user_registration_path, class: 'btn btn-default' %>
 </div>
 <br>
-<%= link_to 'コミュニティ一覧へ戻る', communities_path %>
+<%= link_to 'コミュニティ一覧へ戻る', communities_path, class: 'btn btn-default' %>

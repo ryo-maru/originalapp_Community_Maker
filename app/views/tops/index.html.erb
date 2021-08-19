@@ -6,6 +6,7 @@ Community Makerはコミュニティを作りたい人と、コミュニティ�
 ゲーム感覚でコミュニティを自由に作り、楽しんで頂きたいです。〜​</p>
 
 
-<%= link_to t('view.アカウント作成'), new_user_registration_path %>
-<%= link_to t('view.ログイン'), new_user_session_path %>
-<%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post %>
+<%= link_to t('view.アカウント作成'), new_user_registration_path, class: 'btn btn-default' %>
+<%= link_to t('view.ログイン'), new_user_session_path, class: 'btn btn-default' %>
+<%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: 'btn btn-default', method: :post %>
+<%= link_to 'ゲスト管理者ログイン（閲覧用）', users_guest_admin_sign_in_path,class: 'btn btn-default', method: :post %>
