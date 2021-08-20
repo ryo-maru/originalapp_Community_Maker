@@ -7,5 +7,5 @@ class Community < ApplicationRecord
   has_many :member_users, through: :members, source: :user
   mount_uploader :image, ImageUploader
   validates :name, length: { in: 1..75 }
-  validates :description, length: { in: 1..300 }
+  validates :description, length: { maximum: 300 }
 end

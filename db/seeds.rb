@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-5.times do |n|
+ 5.times do |n|
   name = Faker::Games::Pokemon.name
   email = Faker::Internet.email
   password = "password"
@@ -13,8 +13,6 @@
                email: email,
                password: password,
                image: open("./db/fixtures/image#{1}.jpeg")
-               #image:File.open("./public/images/tamago.jpeg"),
-               #image: open("#{Rails.root}/db/fixtures/tamago.jpg")
                )
 end
 
@@ -24,9 +22,21 @@ User.create!(
   password: "password01",
   admin: true,
   image: open("./db/fixtures/image1.jpeg")
-  #image:File.open("./public/images/tamago.jpeg")
-  #image: open("#{Rails.root}/db/fixtures/tamago.jpg")
  )
+ User.create!(
+   name: "ゲスト",
+   email: "guest@example.com" ,
+   password: "SecureRandom.urlsafe_base64",
+   image: open("./db/fixtures/image1.jpeg")
+  )
+  User.create!(
+    name: "ゲスト管理者",
+    email: "guest_admin@example.com" ,
+    password: "SecureRandom.urlsafe_base64",
+    admin: true,
+    image: open("./db/fixtures/image1.jpeg")
+
+   )
 
  Community.create!(
   name: "野球小僧",
@@ -35,14 +45,14 @@ User.create!(
 )
 
 Community.create!(
- name: "ラーメン大好き",
- description: "ラーメン好き集まれ",
+ name: "ラーメン大好き We Love Noodles",
+ description: "ラーメン好きは",
  user_id: 3
 )
 
 Community.create!(
- name: "進撃の巨人好き",
- description: "連載終わって寂しい人",
+ name: "進撃の巨人",
+ description: "連載終わって寂しい人集合",
  user_id: 4
 )
 
@@ -53,8 +63,8 @@ Community.create!(
 )
 
 Community.create!(
- name: "犬好き",
- description: "犬好き集まれ！猫好きももちろん",
+ name: "ポケモン愛好家",
+ description: "ポケモン大好き！",
  user_id: 6
 )
 
@@ -70,20 +80,31 @@ Comment.create!(
  user_id: 1
 )
 
-Comment.create!(
- community_id: 3,
- content: "参加キボンヌ",
- user_id: 3
-)
 
-Comment.create!(
- community_id: 4,
- content: "僕でよかったらいつでも参加できます",
- user_id: 4
-)
 
-Comment.create!(
- community_id: 5,
- content: "友達増やしたいです",
- user_id: 5
-)
+29.times do |n|
+ content = Faker::Games::Pokemon.name
+ user_id = Faker::Number.between(from: 1, to: 6)
+ Comment.create!(content: content,
+                 community_id: 5,
+                 user_id: user_id
+              )
+end
+
+29.times do |n|
+ content = Faker::Games::Pokemon.name
+ user_id = Faker::Number.between(from: 1, to: 6)
+ Comment.create!(content: content,
+                 community_id: 4,
+                 user_id: user_id
+              )
+end
+
+29.times do |n|
+ content = Faker::Games::Pokemon.name
+ user_id = Faker::Number.between(from: 1, to: 6)
+ Comment.create!(content: content,
+                 community_id: 3,
+                 user_id: user_id
+              )
+end

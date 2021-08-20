@@ -15,6 +15,18 @@
  *= require_tree .
  *= require_self
  */
+
+ #container {
+    position: relative;
+    min-height: 100%;
+}
+
+#main {
+    background-color: lightgray;
+    padding-bottom: 150px;
+}
+
+
  .footerFixed{
      min-height: 100vh; /* ←コンテンツの高さの最小値＝ブラウザの高さに指定 */
      position: relative;/* ←相対位置 */

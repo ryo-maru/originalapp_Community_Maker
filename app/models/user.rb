@@ -11,25 +11,27 @@ class User < ApplicationRecord
   has_one_attached :avatar
   validates :image, presence: true
   validates :name,length: { in: 1..75 }
-  validates :email,length: { in: 6..30 }
-  validates :password_digest,length: { in: 6..30 }
-  validates :description,length: { in: 1..300 }
+  validates :email,length: { in: 6..100 }
+  #validates :encrypted_password,length: { in: 6..30 }
+  validates :description,length: { maximum: 300 }
 
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
       user.name = "ゲスト"
-      user.image = open("./db/fixtures/image#{1}.jpeg")
+      user.description = "こんにちは"
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+      # 例えば name を入力必須としているならば， user.name = "ゲスト" なども必要
     end
   end
 
   def self.guest_admin
     find_or_create_by!(email: 'guest_admin@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64
-      user.admin = 'true'
       user.name = "ゲスト管理者"
-      user.image = open("./db/fixtures/image#{1}.jpeg")
+      user.description = "こんにちは"
+
     end
   end
 

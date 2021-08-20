@@ -13,6 +13,9 @@
 </head>
 
 <body>
+
+  <div id="container">
+
   <header>
     <% if user_signed_in? %>
     <nav class="navbar navbar-default">
@@ -46,7 +49,7 @@
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-              <a class="navbar-brand" href="#">Community Maker</a>
+              <a class="navbar-brand" href="communities">Community Maker</a>
               </div>
               <div class="collapse navbar-collapse" id="navbarEexample2">
                 <ul class="nav navbar-nav navbar-right">
@@ -59,15 +62,19 @@
           </div>
         </nav>
       </header>
+      <wrap>
       <% if notice %>
       <p class="alert alert-notice"><%= notice %></p>
       <% end %>
       <% if alert %>
       <p class="alert alert-error"><%= alert %></p>
       <% end %>
+
       <%= yield %>
+      </wrap>
       <footer>
         <p >Community Maker © 2021 Copyright</p>
       </footer>
+    </div>
     </body>
     </html>
