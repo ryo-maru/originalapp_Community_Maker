@@ -9,7 +9,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
    if resource.email == 'guest@example.com'
      redirect_to root_path, alert: 'ゲストユーザーの変更・削除はできません。'
    end
- end
+  end
+
+  def destroy
+    if current_user == resource && current_user.admin?
+      flash[:error] == "You can't delete yourself"
+      redirect_to user_path(resource)
+    else
+      super
+    end
+  end
 
  private
 
