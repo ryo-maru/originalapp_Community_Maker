@@ -34,8 +34,7 @@ https://docs.google.com/spreadsheets/d/1tR8hbfO2SB3YpqlvaVjIZDsG-JC9Yschr6yfXQJb
 
 https://cacoo.com/diagrams/tqQaPsUGTJPhKVNj/B88F5
 
-<img width="1440" alt="スクリーンショット 2021-08-19 23 16 50" src="https://user-images.githubusercontent.com/60056192/130084811-477076fd-713c-44d2-b030-0b4cc42bddad.png">
-
+<img width="1440" alt="スクリーンショット 2021-08-20 9 57 55" src="https://user-images.githubusercontent.com/60056192/130162451-282bd534-d51a-4c73-b7cb-a3ebc6c86c8f.png">
 
 
 
@@ -43,7 +42,7 @@ https://cacoo.com/diagrams/tqQaPsUGTJPhKVNj/B88F5
 
 https://cacoo.com/diagrams/IKTDO3w7sKKDZ6a6/240CA
 
-<img width="1440" alt="スクリーンショット 2021-08-12 20 34 34" src="https://user-images.githubusercontent.com/60056192/129190285-cb40f476-e74e-4e4f-ae3d-b477241307ae.png">
+<img width="1440" alt="スクリーンショット 2021-08-20 10 06 46" src="https://user-images.githubusercontent.com/60056192/130163208-eb7da717-570b-4892-8c00-80fa1aa32295.png">
 
 
 
