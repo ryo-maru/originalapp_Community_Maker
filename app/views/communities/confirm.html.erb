@@ -1,4 +1,4 @@
-<h3>以下の内容で、コミュニティを作成する。</h3>
+<div class="name text-center">
 <%= form_with(model: @community, local: true) do |form| %>
   <%= form.hidden_field :name %>
   <%= form.hidden_field :description %>
@@ -9,5 +9,5 @@
   <br>
   <%= link_to 'コミュニティ一覧へ戻る', communities_path %>
 
-
+</div>
 <% end %>

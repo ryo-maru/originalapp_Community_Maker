@@ -1,5 +1,8 @@
+
 <h1><%= @user.name %>さんのページ</h1>
-  <%= image_tag @user.image.url,class:"rounded-circle", size: "200x200" %>
+<div class="box">
+  <%= image_tag @user.image.url %>
+</div>
 <p>メールアドレス: <%= @user.email %></p>
 <p>自己紹介: <%= @user.description %></p>
 

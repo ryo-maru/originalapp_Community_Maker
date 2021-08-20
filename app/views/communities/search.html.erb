@@ -7,6 +7,9 @@
       <th>コミュニティ説明</th>
       <th>作成者</th>
       <th>作成日時</th>
+      <th>コメント<span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></th>
+      <th>いいね<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></th>
+      <th>参加人数<span class="glyphicon glyphicon-user" aria-hidden="true"></span></th>
     </tr>
   </thead>
 
@@ -17,11 +20,14 @@
         <td><%= community.description %></td>
         <td><%= community.user.name %></td>
         <td><%= community.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= community.comments.count%></td>
+        <td><%= community.favorites.count%></td>
+        <td><%= community.members.count%></td>
 
 
 
         <% if user_signed_in? %>
-       <td><%= link_to '詳しく', community,class: 'btn btn-info' %></td>
+       <td><%= link_to '詳しく', community,class: 'btn btn-info' if community.comments.count < 30 %></td>
        <% end %>
          <% if community.user == current_user %>
         <td><%= link_to '編集', edit_community_path(community), class: 'btn btn-success' %></td>
@@ -32,4 +38,4 @@
   </tbody>
 </table>
 
-<%= link_to "コミュニティ一覧へ戻る", communities_path %>
+<%= link_to 'コミュニティ一覧へ戻る', communities_path, class: 'btn btn-default' %>
