@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :email,length: { in: 6..100 }
   #validates :encrypted_password,length: { in: 6..30 }
   validates :description,length: { maximum: 300 }
-
+  before_destroy :ensure_admin_deatroy
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
@@ -34,5 +34,11 @@ class User < ApplicationRecord
 
     end
   end
+
+
+  def ensure_admin_deatroy
+     throw(:abort) if User.where(name: "ゲスト管理者") && self.admin == true
+   end
+
 
 end
