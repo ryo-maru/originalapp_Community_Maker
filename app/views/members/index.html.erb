@@ -6,7 +6,7 @@
       <th>コミュニティ名</th>
       <th>コミュニティ説明</th>
       <th>作成者</th>
-      <th>作成日時</th>
+      <th>作成日</th>
     </tr>
   </thead>
 
@@ -16,7 +16,7 @@
         <td><%= member.community.name %></td>
         <td><%= member.community.description %></td>
         <td><%= member.community.user.name %></td>
-        <td><%= member.community.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= member.community.created_at.strftime("%Y-%m-%d") %></td>
       </tr>
   <% end %>
 </table>

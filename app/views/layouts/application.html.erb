@@ -14,7 +14,6 @@
 
 <body>
 
-  <div id="container">
 
   <header>
     <% if user_signed_in? %>
@@ -36,8 +35,8 @@
             <li><%= link_to "Top", root_path %></li>
             <li><%= link_to "コミュニティ一覧", communities_path %></li>
             <li><%= link_to "マイページ", user_path(current_user.id) %></li>
-            <li><%= link_to "お気に入り一覧", favorites_path %></li>
-            <li><%= link_to "参加コミュニティ一覧", members_path %></li>
+            <li><%= link_to "お気に入り", favorites_path %></li>
+            <li><%= link_to "参加コミュニティ", members_path %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <% else %>
           </ul>
@@ -72,9 +71,9 @@
 
       <%= yield %>
       </wrap>
-      <footer>
+      <footer >
         <p >Community Maker © 2021 Copyright</p>
       </footer>
-    </div>
+
     </body>
     </html>

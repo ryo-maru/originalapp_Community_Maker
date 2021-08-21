@@ -14,9 +14,9 @@
       <th>コミュニティ名</th>
       <th>コミュニティ説明</th>
       <th>作成者</th>
-      <th>作成日時</th>
+      <th>作成日</th>
       <th>コメント<span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span></th>
-      <th>いいね<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></th>
+      <th>いいね!<span class="glyphicon glyphicon-heart" aria-hidden="true"></span></th>
       <th>参加人数<span class="glyphicon glyphicon-user" aria-hidden="true"></span></th>
     </tr>
   </thead>
@@ -27,7 +27,7 @@
         <td><%= community.name %></td>
         <td><%= community.description %></td>
         <td><%= community.user.name %></td>
-        <td><%= community.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><%= community.created_at.strftime("%Y-%m-%d") %></td>
         <td><%= community.comments.count%></td>
         <td><%= community.favorites.count%></td>
         <td><%= community.members.count%></td>
@@ -47,4 +47,4 @@
 <br>
 
 
-<%= link_to 'コミュニティを作る', new_community_path, class: 'btn btn-default' %>
+<%= link_to '+コミュニティを作る ', new_community_path, class: 'btn btn-default' %>
