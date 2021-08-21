@@ -35,7 +35,7 @@
         <% if user_signed_in? %>
        <td><%= link_to '詳しく', community,class: 'btn btn-info' if community.comments.count < 30 %></td>
        <% end %>
-         <% if community.user == current_user %>
+         <% if community.user == current_user || current_user.admin?  %>
         <td><%= link_to '編集', edit_community_path(community), class: 'btn btn-success' %></td>
         <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていいの?' } %></td>
         <% end %>

@@ -17,7 +17,9 @@
 <br>
 <br>
 
-<%= link_to t('view.アカウント作成'), new_user_registration_path, class: 'btn btn-default' %>
+<%= link_to t('アカウント作成'), new_user_registration_path, class: 'btn btn-default' %>
 <%= link_to t('view.ログイン'), new_user_session_path, class: 'btn btn-default' %>
+<br>
+<br>
 <%= link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, class: 'btn btn-default', method: :post %>
 <%= link_to 'ゲスト管理者ログイン（閲覧用）', users_guest_admin_sign_in_path,class: 'btn btn-default', method: :post %>

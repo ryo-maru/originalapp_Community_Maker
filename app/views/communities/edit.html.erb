@@ -1,6 +1,35 @@
-<h1>Editing Community</h1>
+<div class="name text-center">
+<h1>Editing community</h1>
+<%= form_with(model: @community, local: true,url: choose_new_or_edit) do |form| %>
+  <% if @community.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@community.errors.count, "error") %> prohibited this @community from being saved:</h2>
 
-<%= render 'form', community: @community %>
+      <ul>
+      <% @community.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<%= link_to 'Show', @community %> |
-<%= link_to 'Back', communities_path %>
+  <div class="field text-center">
+    <%= form.label :コミュニティ名 %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field text-center">
+    <%= form.label :コミュニティ説明 %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="actions text-center">
+    <%= form.submit "コミュニティを編集する" %>
+  </div>
+<% end %>
+
+
+<%= link_to '詳しく', @community %> |
+<%= link_to 'コミュニティ一覧に戻る', communities_path %>
+
+</div>

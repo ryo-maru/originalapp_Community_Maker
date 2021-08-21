@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
- 5.times do |n|
+ 11.times do |n|
   name = Faker::Games::Pokemon.name
   email = Faker::Internet.email
   password = "password"
@@ -40,33 +40,70 @@ User.create!(
 
  Community.create!(
   name: "野球小僧",
-  description: "野球好き集まれ",
+  description: "野球好き集まれ!プレイボール！！",
   user_id: 2
 )
 
 Community.create!(
  name: "ラーメン大好き We Love Noodles",
- description: "ラーメン好きは",
+ description: "ラーメン好きはこの指止まれ！！",
  user_id: 3
 )
 
 Community.create!(
- name: "進撃の巨人",
- description: "連載終わって寂しい人集合",
+ name: "進撃の巨人Lover",
+ description: "連載終わって寂しい人集合、好きなシーンについて語ろう",
  user_id: 4
 )
 
 Community.create!(
  name: "競馬好き",
- description: "秋のG1について語ろう",
+ description: "秋のG1について語ろう、注目している馬などいれば",
  user_id: 5
 )
 
 Community.create!(
  name: "ポケモン愛好家",
- description: "ポケモン大好き！",
+ description: "ポケモン大好き！ポケモンマスターに俺はなる",
  user_id: 6
 )
+Community.create!(
+ name: "加藤純一最強！加藤純一最強！",
+ description: "全国の衛門集合だ！！",
+ user_id: 7
+)
+Community.create!(
+ name: "Among usで遊びましょう",
+ description: "初心者もベテランも大歓迎",
+ user_id: 1
+)
+
+Community.create!(
+ name: "1991年生まれのみんな",
+ description: "仲良くおしゃべりしましょう",
+ user_id: 8
+)
+
+Community.create!(
+ name: "細美武士好き",
+ description: "音楽フェスではかぶりつき♪",
+ user_id: 9
+)
+
+Community.create!(
+ name: "檜山沙耶ファンクラブ",
+ description: "ウェザーニュースキャスターのさやっち応援コミュニティです",
+ user_id: 10
+)
+
+Community.create!(
+ name: "集まれ！暴力の森",
+ description: "凶暴な人集まれ！！",
+ user_id: 11
+)
+
+
+
 
 Comment.create!(
  community_id: 2,
@@ -76,7 +113,7 @@ Comment.create!(
 
 Comment.create!(
  community_id: 1,
- content: "前から気になってたんだよねこれ",
+ content: "前から気になってたんだよね--",
  user_id: 1
 )
 
