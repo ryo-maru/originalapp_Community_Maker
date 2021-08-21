@@ -22,12 +22,11 @@
   position: relative;
 }
 
-
-
-
-
  .footer{
      position: absolute;/* ←絶対位置 */
      bottom: 0;
-     
  }
+
+ .field_with_errors {
+  display: contents;
+}

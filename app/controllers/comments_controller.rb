@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     # クライアント要求に応じてフォーマットを変更
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to communities_path }
+        format.html { redirect_to community_path(@community) }
       else
         format.html { redirect_to community_path(@community), notice: '投稿できませんでした...' }
       end
