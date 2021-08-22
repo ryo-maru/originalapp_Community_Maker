@@ -1,7 +1,7 @@
 
 
 body{
-  position: relative;
+
 }
 
 
@@ -9,10 +9,12 @@ body{
   background-color: #fafafa;
   height: 30px;
   width: 100%;
-  position: absolute;
+
   left: 0;
   bottom: 0;
   display: table;
+  position: fixed;
+  text-align: center;
 }
 .footer p {
   margin: 0;

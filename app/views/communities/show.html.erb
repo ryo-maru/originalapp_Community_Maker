@@ -9,6 +9,9 @@
   <strong>コミュニティ説明:</strong>
   <%= @community.description %>
 </p>
+
+
+
 <% unless @community.user_id == current_user.id %>
   <% if @favorite.present? %>
     <%= link_to 'いいね解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>

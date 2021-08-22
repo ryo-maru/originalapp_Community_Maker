@@ -3,7 +3,9 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
 
   def index
-  @Comments = Comment.page(params[:page]).per(10)
+
+   @comments = Comment.all
+   @comments = Comment.page(params[:page]).per(10)
   end
 
   def create
@@ -48,6 +50,9 @@ class CommentsController < ApplicationController
       format.js { render :index }
     end
   end
+
+
+
 
   private
   # ストロングパラメーター

@@ -2,10 +2,13 @@ class CommunitiesController < ApplicationController
   before_action :set_community, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
   before_action :set_q, only: [:index, :search]
+  before_action :correct_user, only: [:edit, :update]
+  before_action :limits_of_show, only: [:edit, :update, :show]
+
 
   # GET /communities or /communities.json
   def index
-    @communities = Community.all
+    @communities = Community.page(params[:page]).per(10)
   end
 
   # GET /communities/1 or /communities/1.json
@@ -87,4 +90,19 @@ class CommunitiesController < ApplicationController
     def set_q
       @q = Community.ransack(params[:q])
     end
+
+    def correct_user
+      @community = current_user.communities.find_by(id: params[:id])
+     unless @community
+       redirect_to root_url
+     end
+    end
+
+    def limits_of_show
+      if @community.comments.count <= 30
+      unless current_user.admin?
+        redirect_to root_url
+      end
+    end
+  end
 end

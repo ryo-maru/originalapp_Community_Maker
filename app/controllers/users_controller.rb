@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update]
+  before_action :ensure_current_user, {only: [:edit, :update]}
 
 
   def show
@@ -7,7 +8,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if @current_user.id == params[:id].to_i
     @user = User.find(params[:id])
+    else
+      flash[:notice]="権限がありません"
+      redirect_to("/posts/index")
+    end
   end
 
   def update
@@ -25,6 +31,9 @@ class UsersController < ApplicationController
   def image
     @users = User.where(user_id: current_user.id).where.not(image: nil)
   end
+
+
+
 
 
 
