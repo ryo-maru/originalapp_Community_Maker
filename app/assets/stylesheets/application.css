@@ -39,3 +39,20 @@
  .field_with_errors {
    display: contents;
  }
+
+ #error_explanation {
+  margin: 0 auto;
+}
+
+p{
+  font-family: 'Klee One', cursive;
+}
+
+h1{
+  font-family: 'Allison', cursive;
+}
+
+.filefield{
+    width: 250px;
+    margin: 0 auto;
+}

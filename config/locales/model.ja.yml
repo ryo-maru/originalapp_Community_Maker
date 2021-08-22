@@ -1,0 +1,12 @@
+ja:
+  activerecord:
+    models:
+      comminity: コミュニティ
+      user: ユーザー
+    attributes:
+      community:
+        name: コミュニティ名
+        content: 内容
+      user:
+        name: 名前
+        email: メールアドレス

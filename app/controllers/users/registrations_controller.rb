@@ -4,6 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
   before_action :check_guest, only: %i[update destroy]
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   def check_guest
    if resource.email == 'guest@example.com'
@@ -19,6 +20,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       super
     end
   end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :image, :image_cache, :description]) # 新規登録時(sign_up時)にnameというキーのパラメーターを追加で許可する
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :image_cache, :description])
+  end
+
 
  private
 
