@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :members, dependent: :destroy
   mount_uploader :image, ImageUploader
   has_one_attached :avatar
-  validates :image, presence: true
+  #validates :image, presence: true
   validates :name,length: { in: 1..30 }
   validates :email,length: { in: 6..100 }
   validates :description, length: { maximum: 500 }

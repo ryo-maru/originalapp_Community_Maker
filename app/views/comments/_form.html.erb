@@ -12,9 +12,9 @@
   <% end %>
   <div class="field">
     <%= form.label :コメント内容 if community.comments.count < 30%>
-    <%= form.text_area :content if community.comments.count < 30%>
+    <%= form.text_area :content, class: "content_field"  if community.comments.count < 30%>
   </div>
   <div class="actions">
-    <%= form.submit "コメントする" if community.comments.count < 30%>
+    <%= form.submit "コメントする"if community.comments.count < 30%>
   </div>
 <% end %>

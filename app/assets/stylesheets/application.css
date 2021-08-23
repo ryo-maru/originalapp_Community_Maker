@@ -62,3 +62,13 @@ h1{
     width: 250px;
     margin: 0 auto;
 }
+
+.search_field{
+  width: 350px;
+  margin: 0 auto;
+}
+
+.content_field{
+  width: 350px;
+  height: 100px;
+}

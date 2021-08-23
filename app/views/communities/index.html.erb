@@ -3,7 +3,7 @@
 
 <%= search_form_for @q, url: search_communities_path do |f| %>
   <%= f.label :name_cont, 'コミュニティ名で検索'%>
-  <%= f.search_field :name_cont %>
+  <%= f.search_field :name_cont, class: "search_field" %>
   <br>
   <%= f.submit '検索' %>
 <% end %>
