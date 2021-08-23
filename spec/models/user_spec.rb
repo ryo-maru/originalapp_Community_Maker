@@ -2,7 +2,7 @@ require 'rails_helper'
 RSpec.describe 'users_model', type: :model do
   describe 'バリデーションテスト' do
 
-    context 'ユーザネームが名が未入力の場合' do
+    context 'ユーザネームが未入力の場合' do
       it 'バリデーションが作動する' do
         user = User.new(name: '', email: 'test@test.com', password: 'testdayo')
         expect(user).not_to be_valid
