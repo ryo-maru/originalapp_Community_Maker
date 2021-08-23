@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :image, presence: true
   validates :name,length: { in: 1..75 }
   validates :email,length: { in: 6..100 }
+  validates :description, length: { maximum: 300 }
   validates :password, presence: true, length: { minimum: 6 }
   before_destroy :ensure_admin_deatroy
 
