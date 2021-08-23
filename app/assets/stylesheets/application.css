@@ -38,6 +38,7 @@
 
  .field_with_errors {
    display: contents;
+   display: inline;
  }
 
  #error_explanation {
@@ -53,6 +54,11 @@ h1{
 }
 
 .filefield{
+    width: 250px;
+    margin: 0 auto;
+}
+
+.textfield{
     width: 250px;
     margin: 0 auto;
 }

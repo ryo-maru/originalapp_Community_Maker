@@ -12,8 +12,7 @@ class User < ApplicationRecord
   validates :image, presence: true
   validates :name,length: { in: 1..75 }
   validates :email,length: { in: 6..100 }
-  #validates :encrypted_password,length: { in: 6..30 }
-  validates :description,length: { maximum: 300 }
+  validates :password, presence: true, length: { minimum: 6 }
   before_destroy :ensure_admin_deatroy
 
   def self.guest
