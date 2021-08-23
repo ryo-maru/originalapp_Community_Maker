@@ -6,6 +6,6 @@ class Community < ApplicationRecord
   has_many :members, dependent: :destroy
   has_many :member_users, through: :members, source: :user
   mount_uploader :image, ImageUploader
-  validates :name, length: { in: 1..75 }
-  validates :description, length: { maximum: 300 }
+  validates :name, length: { in: 1..50 }
+  validates :description, length: { maximum: 500 }
 end

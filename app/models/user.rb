@@ -10,9 +10,9 @@ class User < ApplicationRecord
   mount_uploader :image, ImageUploader
   has_one_attached :avatar
   validates :image, presence: true
-  validates :name,length: { in: 1..75 }
+  validates :name,length: { in: 1..30 }
   validates :email,length: { in: 6..100 }
-  validates :description, length: { maximum: 300 }
+  validates :description, length: { maximum: 500 }
   validates :password, presence: true, length: { minimum: 6 }
   before_destroy :ensure_admin_deatroy
 
