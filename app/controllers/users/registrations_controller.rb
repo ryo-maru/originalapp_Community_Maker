@@ -28,6 +28,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :image, :image_cache, :description])
   end
 
+  protected
+
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
+  def after_update_path_for(resource)
+    user_path(@user.id)
+  end
+
 
  private
 

@@ -5,12 +5,12 @@
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v11.0" nonce="L3ci3i7U"></script>
 <br>
 
-<%= search_form_for @q, url: search_communities_path do |f| %>
-  <%= f.label :name_cont, 'コミュニティ名で検索'%>
-  <%= f.search_field :name_cont, class: "search_field" %>
+  <%= search_form_for @q, url: search_communities_path do |f| %>
+    <%= f.label :name_cont, 'コミュニティ名で検索'%>
+    <%= f.search_field :name_cont, class: "search_field" %>
   <br>
-  <%= f.submit '検索' %>
-<% end %>
+    <%= f.submit '検索' %>
+  <% end %>
 <br>
 <table class="table table-hover">
   <thead>
@@ -36,23 +36,27 @@
         <td><%= community.favorites.count%></td>
         <td><%= community.members.count%></td>
 
-        <% if user_signed_in? %>
-       <td><%= link_to '詳しく', community,class: 'btn btn-info' if community.comments.count < 30 %></td>
+       <% if user_signed_in? %>
+         <td><%= link_to '詳しく', community,class: 'btn btn-info' if community.comments.count < 30 %></td>
+       <% end %>
+
+       <% if community.comments.count >= 30 %>
+         <%= image_tag 'images.png', class: "dokuro_field" %>
        <% end %>
 
        <% if current_user.admin?%>
        <td><%= link_to '詳しく', community,class: 'btn btn-default' if community.comments.count >= 30  %></td>
        <% end %>
 
-
          <% if community.user == current_user  %>
-        <td><%= link_to '編集', edit_community_path(community), class: 'btn btn-success' %></td>
-        <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていいの?' } %></td>
+          <td><%= link_to '編集', edit_community_path(community), class: 'btn btn-success' %></td>
+          <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていいの?' } %></td>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
 <%= paginate @communities %>
 <br>
 
@@ -60,9 +64,8 @@
 <%= link_to '+コミュニティを作る', new_community_path, class: 'btn btn-default btn-lg active' %>
 <br>
 <br>
+
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<br>
 <div class="line-it-button" data-lang="ja" data-type="share-c" data-ver="3" data-url="https://pacific-inlet-71255.herokuapp.com/" data-color="default" data-size="small" data-count="false" style="display: none;"></div>
 <script src="https://www.line-website.com/social-plugins/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
-<br>
 <div class="fb-share-button" data-href="https://pacific-inlet-71255.herokuapp.com/" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fpacific-inlet-71255.herokuapp.com%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">シェア</a></div>
