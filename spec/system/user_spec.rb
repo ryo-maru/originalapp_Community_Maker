@@ -1,8 +1,6 @@
 require 'rails_helper'
 RSpec.describe 'ユーザー機能', type: :system do
 
-
-
   describe 'アカウント新規作成機能' do
     context 'アカウント登録画面でアカウント登録を行なった場合' do
       it 'アカウントが登録され、コミュニティ一覧ページが表示される' do
@@ -98,7 +96,6 @@ RSpec.describe 'ユーザー機能', type: :system do
         click_on 'マイページ'
         click_on 'プロフィール編集'
         click_on 'アカウント削除'
-
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content 'アカウントを削除しました。またのご利用をお待ちしております。'
       end
@@ -126,6 +123,4 @@ RSpec.describe 'ユーザー機能', type: :system do
       end
     end
   end
-
-
 end

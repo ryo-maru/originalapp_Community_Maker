@@ -16,9 +16,7 @@ RSpec.describe '管理者機能', type: :system do
         click_on 'マイページ'
         click_on '管理者画面へ移動'
         sleep 1
-        
         expect(page).to have_content 'サイト管理'
-
       end
     end
   end
