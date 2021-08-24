@@ -1,13 +1,15 @@
-
+<div class="name text-center">
 <h1><%= @user.name %>さんのページ</h1>
 <div class="profile_icon">
+<br>
+<br>
   <% if @user.image? %>
   <%= image_tag @user.image.url, class:"user_show_icon" %>
   <% else %>
   <%= image_tag "Noname.png", class:"user_show_icon" %>
   <% end %>
 </div>
-
+<br>
 <p>メールアドレス: <%= @user.email %></p>
 <p>自己紹介: <%= @user.description %></p>
 
@@ -19,3 +21,4 @@
 </div>
 <br>
 <%= link_to 'コミュニティ一覧へ戻る', communities_path, class: 'btn btn-default' %>
+</div>

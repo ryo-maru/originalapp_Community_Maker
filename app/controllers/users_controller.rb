@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
-      binding.irb
       if @user.update(user_params)
         format.html { redirect_to @user, notice: "マイページを編集しました" }
         format.json { render :show, status: :ok, location: @user }
