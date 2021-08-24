@@ -97,20 +97,20 @@ class CommunitiesController < ApplicationController
     def correct_user
       @community = current_user.communities.find_by(id: params[:id])
      unless @community
-       redirect_to root_url
+       redirect_to communities_path
      end
     end
 
     def limits_of_show
       if @community.comments.count <= 30
-      unless current_user.admin? || user_signed_in?
-        redirect_to root_url
+      unless current_user.admin? 
+        redirect_to communities_path
       end
     end
 
     def comment_possible
       unless current_user == @community.members
-        redirect_to root_url
+        redirect_to communities_path
       end
     end
 
