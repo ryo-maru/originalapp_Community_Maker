@@ -14,6 +14,7 @@ module CommunityMaker
     config.time_zone = 'Tokyo'
     config.action_view.field_error_proc = Proc.new do |html_tag, instance| html_tag
     end
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading

@@ -4,6 +4,8 @@ class CommunitiesController < ApplicationController
   before_action :set_q, only: [:index, :search]
   before_action :correct_user, only: [:edit, :update]
   before_action :limits_of_show, only: [:edit, :update, :show]
+  before_action :comment_possible, only: [:show]
+
 
 
   # GET /communities or /communities.json
@@ -17,6 +19,7 @@ class CommunitiesController < ApplicationController
     @comment = @community.comments.build
     @favorite = current_user.favorites.find_by(community_id: @community.id)
     @member = current_user.members.find_by(community_id: @community.id)
+    @community_member = @community.members
   end
 
   # GET /communities/new
@@ -104,5 +107,12 @@ class CommunitiesController < ApplicationController
         redirect_to root_url
       end
     end
+
+    def comment_possible
+      unless current_user == @community.members
+        redirect_to root_url
+      end
+    end
+
   end
 end
