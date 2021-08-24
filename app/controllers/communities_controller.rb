@@ -4,7 +4,7 @@ class CommunitiesController < ApplicationController
   before_action :set_q, only: [:index, :search]
   before_action :correct_user, only: [:edit, :update]
   before_action :limits_of_show, only: [:edit, :update, :show]
-  before_action :comment_possible, only: [:show]
+  #before_action :comment_possible, only: [:show]
 
 
 
