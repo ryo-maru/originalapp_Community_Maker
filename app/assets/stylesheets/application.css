@@ -78,3 +78,9 @@ h1{
 .pagination {
   justify-content: center;
 }
+
+.banner_icon{
+  height: auto;
+  margin:0 auto;
+  width: 190px;
+}
