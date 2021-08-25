@@ -102,7 +102,7 @@ class CommunitiesController < ApplicationController
     end
 
     def limits_of_show
-      if @community.comments.count <= 30
+      if @community.comments.count >= 30
       unless current_user.admin? 
         redirect_to communities_path
       end
