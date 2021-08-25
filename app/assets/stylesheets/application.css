@@ -96,6 +96,6 @@ h2{
 
 .bgimage {
   background-image: url('image0.jpeg');
-  margin: auto;
+  background-size: cover;
 
 }
