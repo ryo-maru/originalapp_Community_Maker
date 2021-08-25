@@ -197,7 +197,7 @@ end
 
 29.times do |n|
  content = Faker::Games::Pokemon.name
- user_id = Faker::Number.between(from: 1, to: 6)
+ user_id = Faker::Number.between(from: 1, to: 21)
  Comment.create!(content: content,
                  community_id: 3,
                  user_id: user_id

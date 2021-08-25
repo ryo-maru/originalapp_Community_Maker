@@ -1,5 +1,5 @@
 <div class="name text-center">
-<h1><%= @user.name %>さんのページ</h1>
+<h2><%= @user.name %>さんのページ</h2>
 <div class="profile_icon">
 <br>
 <br>
@@ -10,8 +10,8 @@
   <% end %>
 </div>
 <br>
-<p>メールアドレス: <%= @user.email %></p>
-<p>自己紹介: <%= @user.description %></p>
+<h5>メールアドレス: <%= @user.email %></h5>
+<h5>自己紹介: <%= @user.description %></h5>
 
 <% if current_user.admin?%>
 <h3><%= link_to '管理者画面へ移動' , rails_admin_path, class: 'btn btn-default' %></h3>

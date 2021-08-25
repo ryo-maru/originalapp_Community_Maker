@@ -49,11 +49,20 @@
 
 p{
   font-family: 'Klee One', cursive;
+
 }
 
 h1{
   font-family: 'Allison', cursive;
+  color: white;
+
 }
+
+h2{
+  font-family: 'Allison', cursive;
+
+}
+
 
 .filefield{
     width: 250px;
@@ -83,4 +92,10 @@ h1{
   height: auto;
   margin:0 auto;
   width: 190px;
+}
+
+.bgimage {
+  background-image: url('image0.jpeg');
+  margin: auto;
+
 }

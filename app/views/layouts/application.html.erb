@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <% if current_user.present? %>
-<p>こんにちは、<%= current_user.name %>さん！</p>
+<h4>こんにちは、<%= current_user.name %>さん！</h4>
 <% end %>
 <head>
   <title>Community Maker</title>
@@ -74,7 +74,7 @@
       <%= yield %>
       </wrap>
       <footer >
-        <p >Community Maker © 2021 Copyright</p>
+        <h5>Community Maker © 2021 Copyright</h5>
       </footer>
 
     </body>
