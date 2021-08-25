@@ -21,22 +21,22 @@
       <th>コミュニティ説明</th>
       <th>作成者</th>
       <th>作成日</th>
-      <th>Comments</th>
-      <th>Nice!!</th>
-      <th>members</th>
+      <th nowrap>コメント</th>
+      <th nowrap>いいね!</th>
+      <th nowrap>参加者</th>
     </tr>
   </thead>
 
   <tbody>
     <% @communities.each do |community| %>
       <tr>
-        <td><%= community.name %></td>
-        <td><%= community.description %></td>
-        <td><%= community.user.name %></td>
-        <td><%= community.created_at.strftime("%Y-%m-%d")%></td>
-        <td><%= community.comments.count%></td>
-        <td><%= community.favorites.count%></td>
-        <td><%= community.members.count%></td>
+        <td nowrap><%= community.name %></td>
+        <td nowrap><%= community.description %></td>
+        <td nowrap><%= community.user.name %></td>
+        <td nowrap><%= community.created_at.strftime("%Y-%m-%d")%></td>
+        <td nowrap><%= community.comments.count%></td>
+        <td nowrap><%= community.favorites.count%></td>
+        <td nowrap><%= community.members.count%></td>
 
        <% if user_signed_in? %>
          <td><%= link_to '詳しく', community,class: 'btn btn-info' if community.comments.count < 30 %></td>
@@ -44,18 +44,17 @@
 
        <% if community.comments.count >= 30 %>
          <td><%= image_tag 'images.png', class: "dokuro_field" %></td>
-       <% end %>
-
-       <% if community.comments.count >= 30 %>
          <li>コミュニティのコメント数が30になりました。コミュニティ作成者、または管理者はコミュニティを削除してください</li>
        <% end %>
 
-
        <% if current_user.admin?%>
-       <td><%= link_to '詳しく', community,class: 'btn btn-default' if community.comments.count >= 30  %></td>
+       <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていいの?' } %></td>
+       <td><%= link_to '詳しく', community,class: 'btn btn-info' if community.comments.count >= 30  %></td>
+
        <% end %>
 
          <% if community.user == current_user  %>
+           <td><%= link_to '詳しく', community,class: 'btn btn-info' if community.comments.count >= 30  %></td>
           <td><%= link_to '編集', edit_community_path(community), class: 'btn btn-success' %></td>
           <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていいの?' } %></td>
         <% end %>

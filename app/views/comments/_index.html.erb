@@ -2,6 +2,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>コメントNo.</th>
       <th>コメント内容</th>
       <th>コメント者</th>
       <th>コメント投稿日時</th>
@@ -9,10 +10,12 @@
   </thead>
 
 <tbody>
-  <% comments.each do |comment| %>
+
+  <% comments.each.with_index(1) do |comment, i| %>
     <% if comment.id.present? %>
       <tr>
         <div class="comment-content" id ="this_comment_<%= comment.id %>"></div>
+        <td><%= "#{i}"%></td>
         <td><%= comment.content %></td>
         <td><%= comment.user.name %></td>
         <td><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></td>

@@ -121,7 +121,7 @@ user_id: 14
 )
 
 Community.create!(
-name: "オリンピックのスケートボードを見て始めたいと思った人",
+name: "スケートボードを始めたい人",
 description: "初心者大歓迎！一緒に練習しましょう",
 user_id: 15
 )
@@ -152,7 +152,7 @@ user_id: 19
 
 Community.create!(
 name: "洋服売ります、買います！！",
-description: "服を整理したいけど、メルカリはめんどくさい！そんな人集まれ、ファッション好きも大歓迎",
+description: "ファッション好き大歓迎",
 user_id: 20
 )
 
@@ -179,7 +179,7 @@ Comment.create!(
 
 29.times do |n|
  content = Faker::Games::Pokemon.name
- user_id = Faker::Number.between(from: 1, to: 6)
+ user_id = Faker::Number.between(from: 1, to: 21)
  Comment.create!(content: content,
                  community_id: 5,
                  user_id: user_id
@@ -188,7 +188,7 @@ end
 
 29.times do |n|
  content = Faker::Games::Pokemon.name
- user_id = Faker::Number.between(from: 1, to: 6)
+ user_id = Faker::Number.between(from: 1, to: 21)
  Comment.create!(content: content,
                  community_id: 4,
                  user_id: user_id
