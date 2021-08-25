@@ -49,7 +49,7 @@
 
        <% if current_user.admin?%>
        <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていいの?' } %></td>
-       <td><%= link_to '詳しく', community,class: 'btn btn-info' if community.comments.count >= 30  %></td>
+       <td><%= link_to '詳しく', community, class: 'btn btn-info' if community.comments.count >= 30  %></td>
 
        <% end %>
 

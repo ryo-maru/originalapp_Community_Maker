@@ -34,7 +34,7 @@ https://docs.google.com/spreadsheets/d/1tR8hbfO2SB3YpqlvaVjIZDsG-JC9Yschr6yfXQJb
 
 https://cacoo.com/diagrams/tqQaPsUGTJPhKVNj/B88F5
 
-<img width="1440" alt="スクリーンショット 2021-08-20 9 57 55" src="https://user-images.githubusercontent.com/60056192/130162451-282bd534-d51a-4c73-b7cb-a3ebc6c86c8f.png">
+<img width="1440" alt="スクリーンショット 2021-08-25 21 39 37" src="https://user-images.githubusercontent.com/60056192/130792083-5b9d704e-b5f8-4488-87af-0d12e696c9b7.png">
 
 
 
