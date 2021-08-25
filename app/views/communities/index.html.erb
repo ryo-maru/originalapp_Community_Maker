@@ -21,9 +21,9 @@
       <th>コミュニティ説明</th>
       <th>作成者</th>
       <th>作成日</th>
-      <th>コメント</th>
-      <th>いいね!</th>
-      <th>参加人数</th>
+      <th>Comments</th>
+      <th>Nice!!</th>
+      <th>members</th>
     </tr>
   </thead>
 
@@ -33,7 +33,7 @@
         <td><%= community.name %></td>
         <td><%= community.description %></td>
         <td><%= community.user.name %></td>
-        <td><%= community.created_at.strftime("%Y-%m-%d") %></td>
+        <td><%= community.created_at.strftime("%Y-%m-%d")%></td>
         <td><%= community.comments.count%></td>
         <td><%= community.favorites.count%></td>
         <td><%= community.members.count%></td>
@@ -43,8 +43,13 @@
        <% end %>
 
        <% if community.comments.count >= 30 %>
-         <%= image_tag 'images.png', class: "dokuro_field" %>
+         <td><%= image_tag 'images.png', class: "dokuro_field" %></td>
        <% end %>
+
+       <% if community.comments.count >= 30 %>
+         <li>コミュニティのコメント数が30になりました。コミュニティ作成者、または管理者はコミュニティを削除してください</li>
+       <% end %>
+
 
        <% if current_user.admin?%>
        <td><%= link_to '詳しく', community,class: 'btn btn-default' if community.comments.count >= 30  %></td>
