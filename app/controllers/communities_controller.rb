@@ -10,7 +10,7 @@ class CommunitiesController < ApplicationController
 
   # GET /communities or /communities.json
   def index
-    @communities = Community.page(params[:page]).per(10)
+    @communities = Community.page(params[:page]).per(20)
   end
 
   # GET /communities/1 or /communities/1.json
@@ -103,7 +103,7 @@ class CommunitiesController < ApplicationController
 
     def limits_of_show
       if @community.comments.count >= 30
-      unless current_user.admin? 
+      unless current_user.admin?
         redirect_to communities_path
       end
     end
