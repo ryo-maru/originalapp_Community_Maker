@@ -3,6 +3,7 @@
 <table class="table table-hover">
   <thead>
     <tr>
+      <th>コミュニティid</th>
       <th>コミュニティ名</th>
       <th>コミュニティ説明</th>
       <th>作成者</th>
@@ -16,9 +17,10 @@
 
     <% @member.each do |member| %>
       <tr>
+        <td><%= member.community.id %></td>
         <td><%= member.community.name %></td>
         <td><%= member.community.description %></td>
-        <td><%= member.community.user.name %></td>
+        <td><%= link_to member.community.user.name,user_path(member.community.id) %></td>
         <td><%= member.community.created_at.strftime("%Y-%m-%d") %></td>
         <td><%= member.community.comments.count%></td>
         <td><%= member.community.favorites.count%></td>

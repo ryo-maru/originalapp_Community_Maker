@@ -22,7 +22,7 @@
         <td><%= favorite.community.id %></td>
         <td><%= favorite.community.name %></td>
         <td><%= favorite.community.description %></td>
-        <td><%= favorite.community.user.name %></td>
+        <td><%= link_to favorite.community.user.name,user_path(favorite.community.id) %></td>
         <td><%= favorite.community.created_at.strftime("%Y-%m-%d") %></td>
         <td><%= favorite.community.comments.count%></td>
         <td><%= favorite.community.favorites.count%></td>
