@@ -33,7 +33,6 @@ RSpec.describe 'コミュニティ機能', type: :system do
     @comment = FactoryBot.create(:comment, user_id: @user3.id,community_id: @community.id)
     @comment = FactoryBot.create(:comment, user_id: @user3.id,community_id: @community.id)
     @comment = FactoryBot.create(:comment, user_id: @user3.id,community_id: @community.id)
-    @comment = FactoryBot.create(:comment, user_id: @user3.id,community_id: @community.id)
   end
 
   describe 'コミュニティ作成機能' do
@@ -46,8 +45,8 @@ RSpec.describe 'コミュニティ機能', type: :system do
         click_on 'ログイン'
         click_link '+コミュニティを作る'
         fill_in 'community[name]', with: 'テスト'
-        click_on "+コミュニティを作成する"
-        click_on "+コミュニティを作成する"
+        click_on "+コミュニティを作る"
+        click_on "+コミュニティを作る"
         expect(page).to have_content 'テスト'
       end
     end
@@ -63,8 +62,8 @@ RSpec.describe 'コミュニティ機能', type: :system do
         click_on 'ログイン'
         click_link '+コミュニティを作る'
         fill_in 'community[name]', with: 'テスト'
-        click_on "+コミュニティを作成する"
-        click_on "+コミュニティを作成する"
+        click_on "+コミュニティを作る"
+        click_on "+コミュニティを作る"
         click_link '編集'
         fill_in 'community[name]', with: 'コミュニティ名変更'
         click_on "コミュニティを編集する"
@@ -83,8 +82,8 @@ RSpec.describe 'コミュニティ機能', type: :system do
         click_on 'ログイン'
         click_link '+コミュニティを作る'
         fill_in 'community[name]', with: 'テスト'
-        click_on "+コミュニティを作成する"
-        click_on "+コミュニティを作成する"
+        click_on "+コミュニティを作る"
+        click_on "+コミュニティを作る"
         click_link '削除'
         page.driver.browser.switch_to.alert.accept
         expect(page).to have_content 'Communities'
@@ -223,10 +222,12 @@ RSpec.describe 'コミュニティ機能', type: :system do
         fill_in 'user[password]', with: 'test01'
         click_on 'ログイン'
         click_link '詳しく'
+        fill_in 'comment[content]', with: '29コメント！'
+        click_on 'コメントする'
         fill_in 'comment[content]', with: '30コメント！'
         click_on 'コメントする'
         click_on 'コミュニティ一覧'
-        expect(page).not_to have_content '詳しく'
+        expect(page).to have_content 'コミュニティのコメント数が30になりました。コミュニティ作成者、または管理者はコミュニティを削除してください'
       end
     end
   end

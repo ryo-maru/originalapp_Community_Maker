@@ -21,9 +21,9 @@
         <td><%= comment.created_at.strftime("%Y-%m-%d %H:%M") %></td>
 
         <% if comment.user == current_user %>
-        <td><i class="fas fa-edit"></i><%= link_to "編集", edit_community_comment_path(community, comment),remote: true %></td>
-        <td><i class="fas fa-trash-alt"></i><%= link_to "削除", community_comment_path(comment.community_id, comment.id),method: :delete, remote: true,
-                                       data: { confirm: "本当に削除しますか?"} %></td>
+        <td><%= link_to "編集", edit_community_comment_path(community, comment),remote: true %><i class="fas fa-edit"></i></td>
+        <td><%= link_to "削除", community_comment_path(comment.community_id, comment.id),method: :delete, remote: true,
+                                       data: { confirm: "本当に削除しますか?"} %><i class="fas fa-trash-alt"></i></td>
 
         <% end %>
       </tr>
