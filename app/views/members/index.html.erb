@@ -7,6 +7,9 @@
       <th>コミュニティ説明</th>
       <th>作成者</th>
       <th>作成日</th>
+      <th>コメント</th>
+      <th>いいね！<i class="fas fa-heart"></i></th>
+      <th>参加者<i class="fas fa-user"></i></th>
     </tr>
   </thead>
 
@@ -17,6 +20,9 @@
         <td><%= member.community.description %></td>
         <td><%= member.community.user.name %></td>
         <td><%= member.community.created_at.strftime("%Y-%m-%d") %></td>
+        <td><%= member.community.comments.count%></td>
+        <td><%= member.community.favorites.count%></td>
+        <td><%= member.community.members.count%></td>
       </tr>
   <% end %>
 </table>

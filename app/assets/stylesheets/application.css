@@ -12,7 +12,6 @@
  *
  * require bootstrap/dist/css/bootstrap.min
 
-
  *= require bootstrap/dist/css/bootstrap.min
  *= require_tree .
  *= require_self
@@ -55,11 +54,13 @@ p{
 h1{
   font-family: 'Allison', cursive;
   color: white;
+  font-size: 50px;
 
 }
 
 h2{
   font-family: 'Allison', cursive;
+  font-size: 70px;
 
 }
 
@@ -95,6 +96,6 @@ h2{
 }
 
 .bgimage {
-  background-image: url('image0.png');
+  background-image: url('image1.jpeg');
   background-size: cover;
 }
