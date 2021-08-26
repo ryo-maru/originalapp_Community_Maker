@@ -18,6 +18,8 @@ class User < ApplicationRecord
   validates :description, length: { maximum: 500 }
 
   before_destroy :ensure_admin_deatroy
+  before_destroy :ensure_guest_user_deatroy
+
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
@@ -41,6 +43,10 @@ class User < ApplicationRecord
   def ensure_admin_deatroy
      throw(:abort) if User.where(name: "ゲスト管理者") && self.admin == true
    end
+
+   def ensure_guest_user_deatroy
+      throw(:abort) if User.where(name: "ゲスト") 
+    end
 
    #指定のユーザをフォローする
   def follow!(other_user)
