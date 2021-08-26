@@ -7,12 +7,16 @@ class User < ApplicationRecord
   has_many :comments
   has_many :favorites, dependent: :destroy
   has_many :members, dependent: :destroy
+  has_many :active_relationships, foreign_key: 'follower_id', class_name: 'Relationship', dependent: :destroy
+  has_many :passive_relationships, foreign_key: 'followed_id', class_name: 'Relationship', dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
   mount_uploader :image, ImageUploader
   has_one_attached :avatar
   validates :name,length: { in: 1..30 }
   validates :email,length: { in: 6..100 }
   validates :description, length: { maximum: 500 }
-  
+
   before_destroy :ensure_admin_deatroy
 
   def self.guest
@@ -34,10 +38,23 @@ class User < ApplicationRecord
     end
   end
 
-
   def ensure_admin_deatroy
      throw(:abort) if User.where(name: "ゲスト管理者") && self.admin == true
    end
+
+   #指定のユーザをフォローする
+  def follow!(other_user)
+    active_relationships.create!(followed_id: other_user.id)
+  end
+  #フォローしているかどうかを確認する
+  def following?(other_user)
+    active_relationships.find_by(followed_id: other_user.id)
+  end
+
+  #指定のユーザのフォローを解除する
+  def unfollow!(other_user)
+    active_relationships.find_by(followed_id: other_user.id).destroy
+  end
 
 
 end

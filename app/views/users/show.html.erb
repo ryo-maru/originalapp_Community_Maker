@@ -13,6 +13,7 @@
 <h5>メールアドレス: <%= @user.email %></h5>
 <h5>自己紹介: <%= @user.description %></h5>
 
+<div class="user_show_button">
 <% if current_user.admin?%>
 <h3><%= link_to '管理者画面へ移動' , rails_admin_path, class: 'btn btn-default' %></h3>
 <% end %>
@@ -20,5 +21,12 @@
   <%= link_to 'プロフィール編集', edit_user_registration_path, class: 'btn btn-default' %>
 </div>
 <br>
+<div>
 <%= link_to 'コミュニティ一覧へ戻る', communities_path, class: 'btn btn-default' %>
+</div>
+<br>
+<div>
+<%= link_to 'ユーザ一覧へ戻る', users_path, class: 'btn btn-default' %>
+</div>
+</div>
 </div>

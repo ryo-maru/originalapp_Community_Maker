@@ -1,0 +1,29 @@
+<div class='p-top__paginate'><%= paginate(@users) %></div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th nowrap>ユーザid</th>
+      <th nowrap>ユーザネーム</th>
+      <th nowrap>メールアドレス</th>
+      <th nowrap>登録日</th>
+      <th nowrap>フォロー中</th>
+      <th nowrap>フォロワー</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+  <tr>
+    <td nowrap><%= user.id %></td>
+    <td nowrap><%= link_to user.name,user_path(user.id) %></td>
+    <td nowrap><%= user.email %></td>
+    <td nowrap><%= user.created_at.strftime("%Y-%m-%d %H:%M")%></td>
+    <td nowrap><%= user.following.count %></td>
+    <td nowrap><%= user.followers.count %></td>
+    <td nowrap><%= render 'follow_form', user: user %></td>
+  <% end %>
+  <tr>
+  </tbody>
+</table>
+
+<div class='p-top__paginate'><%= paginate(@users) %></div>
