@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update]
   before_action :ensure_current_user, {only: [:edit, :update]}
 
+  def index
+    @users = User.page(params[:page]).per(20)
+  end
+
 
   def show
     @user = User.find(params[:id])
