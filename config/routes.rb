@@ -22,5 +22,8 @@ Rails.application.routes.draw do
   resources :favorites
   resources :members
   resources :relationships, only: [:create, :destroy, :followers]
+  resources :conversations do
+    resources :messages
+  end
 
 end
