@@ -87,7 +87,7 @@ class CommunitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def community_params
-      params.require(:community).permit(:name, :description, :user_id, :user_name).merge(user_id: current_user.id)
+      params.require(:community).permit(:name, :description, :user_id, :user_name, :image, :image_cache).merge(user_id: current_user.id)
     end
 
     def set_q
@@ -95,7 +95,7 @@ class CommunitiesController < ApplicationController
     end
 
     def correct_user
-      @community = current_user.communities.find_by(id: params[:id]) 
+      @community = current_user.communities.find_by(id: params[:id])
      unless @community
        redirect_to communities_path
      end

@@ -1,3 +1,8 @@
+<% if @community.image? %>
+<%= image_tag @community.image.url, class:"community_show_icon" %>
+<% else %>
+<%= image_tag "Noname.png", class:"community_show_icon" %>
+<% end %>
 <br>
 <p>
   <strong>コミュニティ名:</strong>

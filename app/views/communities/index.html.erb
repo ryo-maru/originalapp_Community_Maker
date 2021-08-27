@@ -9,7 +9,7 @@
     <%= f.label :name_cont, 'コミュニティ名で検索'%>
     <%= f.search_field :name_cont, placeholder: "あいまい検索できます", class: "search_field" %>
   <br>
-    <%= f.submit '検索' %>
+    <i class="fas fa-search"></i><%= f.submit '検索' %>
   <% end %>
 <div class='p-top__paginate'><%= paginate(@communities) %></div>
 
@@ -31,7 +31,7 @@
     <% @communities.each do |community| %>
       <tr>
         <td nowrap><%= community.id %></td>
-        <td nowrap><%= community.name %></td>
+        <td nowrap><%= community.name %></td>
         <td nowrap><%= community.description %></td>
         <td nowrap><%= link_to community.user.name,user_path(community.user.id)%></td>
         <td nowrap><%= community.created_at.strftime("%Y-%m-%d")%></td>

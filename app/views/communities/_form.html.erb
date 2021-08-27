@@ -23,6 +23,11 @@
     <%= form.text_area :description, class: "descriptionfield" %>
   </div>
 
+  <div class="field">
+  <%= form.label :image %><br/>
+  <%= form.file_field :image, class: "filefield" %>
+  </div>
+
   <div class="actions text-center">
     <%= form.submit "+コミュニティを作る", class: 'btn btn-default btn-lg active' %>
   </div>

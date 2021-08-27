@@ -2,8 +2,11 @@
 <%= form_with(model: @community, local: true) do |form| %>
   <%= form.hidden_field :name %>
   <%= form.hidden_field :description %>
+  <%= form.hidden_field :image_cache %>
   <p>コミュニティ名:<%= @community.name %></p>
   <p>コミュニティ説明:<%= @community.description %></p>
+  <p>コミュニティイメージ:<%= @community.image_cache %></p>
+  <br>
   <%= form.submit  "+コミュニティを作る", class: 'btn btn-default btn-lg active' %>
   <br>
   <br>
