@@ -18,6 +18,7 @@
   <thead>
     <tr>
       <th nowrap>コミュニティid</th>
+      <th nowrap>アイコン</th>
       <th nowrap>コミュニティ名</th>
       <th nowrap>コミュニティ説明</th>
       <th nowrap>作成者</th>
@@ -30,7 +31,13 @@
   <tbody>
     <% @communities.each do |community| %>
       <tr>
+
         <td nowrap><%= community.id %></td>
+        <% if community.image? %>
+        <td><%= image_tag community.image.url, class:"community_index_icon" %></td>
+        <% else %>
+        <td><%= image_tag "Noname.png", class:"community_index_icon" %></td>
+        <% end %>
         <td nowrap><%= community.name %></td>
         <td nowrap><%= community.description %></td>
         <td nowrap><%= link_to community.user.name,user_path(community.user.id)%></td>
@@ -51,7 +58,6 @@
        <% if current_user.admin?%>
        <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていいの?' } %></td>
        <td><%= link_to '詳しく', community, class: 'btn btn-info' if community.comments.count >= 30  %></td>
-
        <% end %>
 
          <% if community.user == current_user  %>
