@@ -113,6 +113,5 @@ class CommunitiesController < ApplicationController
         redirect_to communities_path
       end
     end
-
   end
 end

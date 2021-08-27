@@ -1,9 +1,12 @@
-<h1>コミュニティ検索結果</h1>
+
+  <h2>コミュニティ検索結果</h2>
+
 
 <table class="table table-hover">
   <thead>
     <tr>
       <th nowrap>コミュニティid</th>
+      <th nowrap>アイコン</th>
       <th nowrap>コミュニティ名</th>
       <th nowrap>コミュニティ説明</th>
       <th nowrap>作成者</th>
@@ -18,6 +21,11 @@
     <% @results.each do |community| %>
       <tr>
         <td nowrap><%= community.id %></td>
+        <% if community.image? %>
+        <td><%= image_tag community.image.url, class:"community_index_icon" %></td>
+        <% else %>
+        <td><%= image_tag "Noname.png", class:"community_index_icon" %></td>
+        <% end %>
         <td nowrap><%= community.name %></td>
         <td nowrap><%= community.description %></td>
         <td nowrap><%= link_to community.user.name,user_path(community.user.id)%></td>
