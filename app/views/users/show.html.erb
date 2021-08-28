@@ -8,10 +8,14 @@
   <% else %>
   <%= image_tag "Noname.png", class:"user_show_icon" %>
   <% end %>
+
 </div>
 <br>
 <h5>メールアドレス: <%= @user.email %></h5>
 <h5>自己紹介: <%= @user.description %></h5>
+<h5>フォロー中: <%= @user.following.count %></h5>
+<h5>フォロワー: <%= @user.followers.count %></h5>
+
 
 <div class="user_show_button">
 <% if current_user.admin?%>
