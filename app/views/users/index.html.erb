@@ -8,7 +8,7 @@
       <th nowrap>ユーザid</th>
       <th nowrap>アイコン</th>
       <th nowrap>ユーザネーム</th>
-      <th nowrap>メールアドレス</th>
+      <th nowrap>自己紹介</th>
       <th nowrap>登録日</th>
       <th nowrap>フォロー</th>
       <th nowrap>フォロワー</th>
@@ -25,14 +25,14 @@
     <td><%= image_tag "Noname.png", class:"user_index_icon" %></td>
     <% end %>
     <td nowrap><%= link_to user.name,user_path(user.id) %></td>
-    <td nowrap><%= user.email %></td>
+    <td nowrap><%= user.description %></td>
     <td nowrap><%= user.created_at.strftime("%Y-%m-%d %H:%M")%></td>
     <td nowrap><%= user.following.count %></td>
     <td nowrap><%= user.followers.count %></td>
 
     <% if user.id != current_user.id %>
     <td nowrap><%= render 'follow_form', user: user %></td>
-    <td>
+    <td nowrap>
       <div class="item">
         <%= link_to 'メッセージを送る', conversations_path(sender_id: current_user.id, recipient_id: user.id), method: :post %>
       </div>

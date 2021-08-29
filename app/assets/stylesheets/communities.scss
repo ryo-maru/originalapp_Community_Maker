@@ -89,3 +89,42 @@ li{
 .community_name{
   color: red;
 }
+
+a.btn--circle {
+  color: white;
+  border-radius: 50%;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  background-color: #FF0066;
+  -webkit-box-shadow: 0 5px 0 #FF0066;
+  box-shadow: 0 5px 0 #FF0066;
+}
+
+a.btn--circle:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+  background-color:#FFCCFF;
+  -webkit-box-shadow: 0 2px 0 #FFCCFF;
+  box-shadow: 0 2px 0 #FFCCFF;
+}
+
+a.btn--sanka {
+  border-radius: 50%;
+  line-height: 100px;
+  width: 100px;
+  height: 100px;
+  padding: 0;
+  background-color: #00FF00;
+  -webkit-box-shadow: 0 5px 0 #00FF00;
+  box-shadow: 0 5px 0 #00FF00;
+}
+
+a.btn--sanka:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+  background-color:#FFFF88;
+  -webkit-box-shadow: 0 2px 0 #FFFF88;
+  box-shadow: 0 2px 0 #FFFF88;
+}

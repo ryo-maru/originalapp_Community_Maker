@@ -96,6 +96,22 @@ h2{
 }
 
 .bgimage {
-  background-image: url('image1.jpeg');
+  background-image: url('IMG_0995.PNG');
   background-size: cover;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #333333;
+  width: 250px;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #FFD700;
+}
+
+a.btn--radius {
+   border-radius: 100vh;
 }

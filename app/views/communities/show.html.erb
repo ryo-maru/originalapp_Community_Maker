@@ -1,8 +1,4 @@
-<% if @community.image? %>
-<%= image_tag @community.image.url, class:"community_show_icon" %>
-<% else %>
-<%= image_tag "Noname.png", class:"community_show_icon" %>
-<% end %>
+
 <br>
 <p style = "color:#3399FF">
   <strong>コミュニティ名:</strong>
@@ -13,22 +9,23 @@
   <strong>コミュニティ説明:</strong>
   <%= @community.description %>
 </p>
-
-
-
+<% if @community.image? %>
+<%= image_tag @community.image.url, class:"community_show_icon" %>
+<% else %>
+<%= image_tag "Noname.png", class:"community_show_icon" %>
+<% end %>
 <% unless @community.user_id == current_user.id %>
   <% if @favorite.present? %>
-    <%= link_to '-いいね!解除', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger'%>
+    <%= link_to '-いいね!解除', favorite_path(id: @favorite.id), method: :delete, class: "btn btn--yellow btn--circle"%>
   <% else %>
-    <%= link_to '+いいね!', favorites_path(community_id: @community.id), method: :post, class: 'btn btn-primary' %>
+    <%= link_to '+いいね!', favorites_path(community_id: @community.id), method: :post, class: "btn btn--yellow btn--circle"  %>
   <% end %>
 <% end %>
-
 <% unless @community.user_id == current_user.id %>
   <% if @member.present? %>
-    <%= link_to '-コミュニティを退会', member_path(id: @member.id), method: :delete, class: 'btn btn-warning' %>
+    <%= link_to '-退会', member_path(id: @member.id), method: :delete, class: "btn btn--sanka btn--sanka" %>
   <% else %>
-    <%= link_to '+コミュニティに参加', members_path(community_id: @community.id), method: :post, class: 'btn btn-success' %>
+    <%= link_to '+参加', members_path(community_id: @community.id), method: :post, class: "btn btn--sanka btn--sanka" %>
   <% end %>
 <% end %>
 <br>

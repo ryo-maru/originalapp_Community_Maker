@@ -137,7 +137,7 @@ User.create!(
   name: "ズバット",
   email: "Zubat@example.jp" ,
   password: "password",
-  description: :"こんにちは、ズバッとです",
+  description: :"こんにちは、ズバットです",
   image: open("./db/fixtures/poke17.png")
 )
 
