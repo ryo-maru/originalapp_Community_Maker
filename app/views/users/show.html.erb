@@ -13,9 +13,8 @@
 <br>
 <h5>メールアドレス: <%= @user.email %></h5>
 <h5>自己紹介: <%= @user.description %></h5>
-<h5>フォロー中: <%= @user.following.count %></h5>
-<h5>フォロワー: <%= @user.followers.count %></h5>
-
+<%= link_to "フォロー:#{@user.following.count}", following_user_path(@user) %>
+<%= link_to "フォロワー:#{@user.followers.count}", followers_user_path(@user) %>
 
 <div class="user_show_button">
 <% if current_user.admin?%>

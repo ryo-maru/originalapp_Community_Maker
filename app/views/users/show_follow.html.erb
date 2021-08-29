@@ -1,0 +1,29 @@
+<div class="follower_container">
+  <div class="follower_inner">
+    <h3>フォロー</h3>
+      <div class='row mt-4'>
+        <% @users.each do |follower| %>
+          <div class='col-md-5 offset-md-1 col-10 offset-1 border rounded-lg my-2 pt-1 posts ga'>
+            <%= link_to user_path(follower) do %>
+              <div class='row row-height'>
+                <div class='col-5'>
+                  <% if follower.image? %>
+                    <%= image_tag follower.image.url, class:'img-fluid d-flex img-thumbnail middle-icon history-index-img' %>
+                  <% else %>
+                    <%= image_tag "noimagehito.png", class:"user_show_icon",class:'img-fluid d-flex img-thumbnail middle-icon history-index-img' %>
+                  <% end %>
+                </div>
+                <div class='col-7'>
+                  <div class='row border-bottom follow-index-user'>
+                    <i class="fa fa-user-o"></i><span class='space'><p><%= follower.name %></p>
+                  </div>
+                  <div class='row follow-index-content'>
+                </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

@@ -26,4 +26,10 @@ Rails.application.routes.draw do
     resources :messages
   end
 
+  resources :users, only: [:show] do
+   member do
+      get :following, :followers
+    end
+ end
+
 end
