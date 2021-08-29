@@ -270,7 +270,7 @@ Community.create!(
 
 Community.create!(
  name: "檜山沙耶ファンクラブ",
- description: "ウェザーニュースキャスターのさやっち応援コミュニティです！さやっちしか勝たん！さやっちしか勝たん！さやっちしか勝たん！",
+ description: "さやっち応援コミュニティです！さやっちしか勝たん！さやっちしか勝たん！さやっちしか勝たん！さやっちしか勝たん！",
  user_id: 10,
  image: open("./db/fixtures/downloadsaya.jpeg")
 )
