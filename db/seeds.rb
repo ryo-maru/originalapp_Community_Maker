@@ -263,14 +263,14 @@ Community.create!(
 
 Community.create!(
  name: "細美武士好き♪",
- description: "音楽フェスではかぶりつき♪",
+ description: "音楽フェスではかぶりつき〜♪",
  user_id: 9,
  image: open("./db/fixtures/downloadtakesi.jpeg")
 )
 
 Community.create!(
  name: "檜山沙耶ファンクラブ",
- description: "ウェザーニュースキャスターのさやっち応援コミュニティです",
+ description: "ウェザーニュースキャスターのさやっち応援コミュニティです！さやっちしか勝たん！さやっちしか勝たん！さやっちしか勝たん！",
  user_id: 10,
  image: open("./db/fixtures/downloadsaya.jpeg")
 )

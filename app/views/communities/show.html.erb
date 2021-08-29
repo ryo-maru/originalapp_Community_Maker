@@ -1,14 +1,15 @@
 <div class="name text-center">
 <br>
-<p style = "color:#3399FF">
+<h3 style = "color:#3399FF">
   <strong>コミュニティ名:</strong>
   <%= @community.name %>
-</p>
+</h3>
 
-<p>
+<h3>
   <strong>コミュニティ説明:</strong>
   <%= @community.description %>
-</p>
+</h3>
+<br>
 <% if @community.image? %>
 <%= image_tag @community.image.url, class:"community_show_icon" %>
 <% else %>
@@ -33,7 +34,7 @@
 <br>
 <br>
 </div>
-<p>コメント一覧</p>
+<h3>コメント一覧</h3>
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
 
   <div id="comments_area">
