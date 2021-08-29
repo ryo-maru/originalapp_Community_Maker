@@ -1,4 +1,4 @@
-
+<div class="name text-center">
 <br>
 <p style = "color:#3399FF">
   <strong>コミュニティ名:</strong>
@@ -18,7 +18,7 @@
   <% if @favorite.present? %>
     <%= link_to '-いいね!解除', favorite_path(id: @favorite.id), method: :delete, class: "btn btn--yellow btn--circle"%>
   <% else %>
-    <%= link_to '+いいね!', favorites_path(community_id: @community.id), method: :post, class: "btn btn--yellow btn--circle"  %>
+    <%= link_to '+いいね!', favorites_path(community_id: @community.id), method: :post, class: "btn btn--yellow btn--circle" %>
   <% end %>
 <% end %>
 <% unless @community.user_id == current_user.id %>
@@ -32,7 +32,7 @@
 <br>
 <br>
 <br>
-
+</div>
 <p>コメント一覧</p>
   <!-- このcomments_areaというHTMLのidを取得して、そのdivの部分だけを更新する -->
 

@@ -208,6 +208,9 @@ Community.create!(
  name: "野球小僧",
  description: "野球好き集まれ!プレイボール！！",
  user_id: 1,
+ #comment:rand(1..29),
+ #favorites:rand(1..10),
+ #members:rand(1..10),
  image: open("./db/fixtures/81fs+JgzeaL.jpg")
 )
 
@@ -350,43 +353,58 @@ image: open("./db/fixtures/download1223.jpeg")
 )
 
 
-Comment.create!(
- community_id: 2,
- content: "面白そう！！",
- user_id: 2
-)
-
-Comment.create!(
- community_id: 1,
- content: "前から気になってたんだよね--",
- user_id: 1
-)
-
-
-
 29.times do |n|
  content = Faker::Games::Pokemon.name
- user_id = Faker::Number.between(from: 1, to: 21)
+ user_id = Faker::Number.between(from: 1, to: 25)
  Comment.create!(content: content,
-                 community_id: 5,
+                 community_id: 1,
                  user_id: user_id
               )
 end
 
 29.times do |n|
  content = Faker::Games::Pokemon.name
- user_id = Faker::Number.between(from: 1, to: 21)
+ user_id = Faker::Number.between(from: 1, to: 25)
  Comment.create!(content: content,
-                 community_id: 4,
+                 community_id: 2,
                  user_id: user_id
               )
 end
 
 29.times do |n|
  content = Faker::Games::Pokemon.name
- user_id = Faker::Number.between(from: 1, to: 21)
+ user_id = Faker::Number.between(from: 1, to: 25)
  Comment.create!(content: content,
                  community_id: 3,
                  user_id: user_id
+              )
+end
+
+100.times do |n|
+ content = Faker::Games::Pokemon.name
+ user_id = Faker::Number.between(from: 1, to: 25)
+ Comment.create!(content: content,
+                 community_id: rand(4..21),
+                 user_id: user_id
+              )
+end
+
+100.times do |n|
+ user_id = Faker::Number.between(from: 1, to: 25)
+ Favorite.create!(user_id: user_id,
+                  community_id: rand(1..21)
+              )
+end
+
+100.times do |n|
+ user_id = Faker::Number.between(from: 1, to: 25)
+ Member.create!(user_id: user_id,
+                community_id: rand(1..21)
+              )
+end
+
+1.times do |n|
+ Relationship.create!(followed_id: 1,
+                      follower_id: 25
               )
 end

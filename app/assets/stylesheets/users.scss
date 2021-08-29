@@ -42,3 +42,15 @@
 .user_index_icon{
   width: 50px;
 }
+
+a.btn--yellow.btn--border-dashed {
+  border: 2px dashed #000;
+}
+
+a.btn--yellow.btn--border-dashed:hover {
+  -webkit-transform: translate(0, 3px);
+  transform: translate(0, 3px);
+  background-color:#B384FF;
+  -webkit-box-shadow: 0 2px 0 #B384FF;
+  box-shadow: 0 2px 0 #B384FF;
+}

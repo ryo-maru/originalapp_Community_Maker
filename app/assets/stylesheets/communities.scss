@@ -111,6 +111,7 @@ a.btn--circle:hover {
 }
 
 a.btn--sanka {
+  color: white;
   border-radius: 50%;
   line-height: 100px;
   width: 100px;
@@ -127,4 +128,27 @@ a.btn--sanka:hover {
   background-color:#FFFF88;
   -webkit-box-shadow: 0 2px 0 #FFFF88;
   box-shadow: 0 2px 0 #FFFF88;
+}
+
+a.btn-gradient {
+  font-size: 2rem;
+  color: #fff;
+  border-radius: 100vh;
+  background-image: -webkit-linear-gradient(110deg, #e9defa 0%, #fbfcdb 100%);
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+a.btn-gradient span {
+  background-image: -webkit-gradient(linear, left top, right top, from(#93a5cf), to(#e4efe9));
+  background-image: -webkit-linear-gradient(left, #93a5cf 0%, #e4efe9 100%);
+  background-image: linear-gradient(to right, #93a5cf 0%, #e4efe9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a.btn-gradient:hover {
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .3);
 }
