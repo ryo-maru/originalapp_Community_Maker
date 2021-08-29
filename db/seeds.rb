@@ -5,16 +5,173 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
- 21.times do |n|
-  name = Faker::Games::Pokemon.name
-  email = Faker::Internet.email
-  password = "password"
-  User.create!(name: name,
-               email: email,
-               password: password,
-               #image: open("./db/fixtures/poke#{3}.png")
-               )
-end
+User.create!(
+  name: "フシギダネ",
+  email: "Bulbasaur@example.jp" ,
+  password: "password",
+  description: :"こんにちは、フシギダネです",
+  image: open("./db/fixtures/poke1.png")
+ )
+
+User.create!(
+  name: "ヒトカゲ",
+  email: "Charmander@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ヒトカゲです",
+  image: open("./db/fixtures/poke2.png")
+)
+
+User.create!(
+  name: "ゼニガメ",
+  email: "Squirtle@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ゼニガメです",
+  image: open("./db/fixtures/poke3.png")
+)
+
+User.create!(
+  name: "キャタピー",
+  email: "Caterpie@example.jp" ,
+  password: "password",
+  description: :"こんにちは、キャタピーです",
+  image: open("./db/fixtures/poke4.png")
+)
+
+User.create!(
+  name: "ビードル",
+  email: "Weedle@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ビードルです",
+  image: open("./db/fixtures/poke5.png")
+)
+
+User.create!(
+  name: "ポッポ",
+  email: "Pidgey@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ポッポです",
+  image: open("./db/fixtures/poke6.png")
+)
+
+User.create!(
+  name: "コラッタ",
+  email: "Rattata@example.jp" ,
+  password: "password",
+  description: :"こんにちは、コラッタです",
+  image: open("./db/fixtures/poke7.png")
+)
+
+User.create!(
+  name: "オニスズメ",
+  email: "Spearow@example.jp" ,
+  password: "password",
+  description: :"こんにちは、オニスズメです",
+  image: open("./db/fixtures/poke8.png")
+)
+
+User.create!(
+  name: "アーボ",
+  email: "Ekans@example.jp" ,
+  password: "password",
+  description: :"こんにちは、アーボです",
+  image: open("./db/fixtures/poke9.png")
+)
+
+User.create!(
+  name: "ピカチュウ",
+  email: "Pikachu@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ピカチュウです",
+  image: open("./db/fixtures/poke10.png")
+)
+
+User.create!(
+  name: "サンド",
+  email: "Sandshrew@example.jp" ,
+  password: "password",
+  description: :"こんにちは、サンドです",
+  image: open("./db/fixtures/poke11.png")
+)
+
+User.create!(
+  name: "ニドランメス",
+  email: "Nidoranmesu@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ニドランメスです",
+  image: open("./db/fixtures/poke12.png")
+)
+
+User.create!(
+  name: "ニドランオス",
+  email: "Nidoranosu@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ニドランオスです",
+  image: open("./db/fixtures/poke13.png")
+)
+
+User.create!(
+  name: "ピッピ",
+  email: "Clefairy@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ピッピです",
+  image: open("./db/fixtures/poke14.png")
+)
+
+User.create!(
+  name: "ロコン",
+  email: "Vulpix@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ロコンです",
+  image: open("./db/fixtures/poke15.png")
+)
+
+User.create!(
+  name: "プリン",
+  email: "Jigglypuff@example.jp" ,
+  password: "password",
+  description: :"こんにちは、プリンです",
+  image: open("./db/fixtures/poke16.png")
+)
+
+User.create!(
+  name: "ズバット",
+  email: "Zubat@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ズバッとです",
+  image: open("./db/fixtures/poke17.png")
+)
+
+User.create!(
+  name: "ナゾノクサ",
+  email: "Oddish@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ナゾノクサです",
+  image: open("./db/fixtures/poke18.png")
+)
+
+User.create!(
+  name: "パラス",
+  email: "Paras@example.jp" ,
+  password: "password",
+  description: :"こんにちは、パラスです",
+  image: open("./db/fixtures/poke19.png")
+)
+
+User.create!(
+  name: "コンパン",
+  email: "Venonat@example.jp" ,
+  password: "password",
+  description: :"こんにちは、コンパンです",
+  image: open("./db/fixtures/poke20.png")
+)
+
+User.create!(
+  name: "ディグダ",
+  email: "Diglett@example.jp" ,
+  password: "password",
+  description: :"こんにちは、ディグダです",
+  image: open("./db/fixtures/poke21.png")
+)
 
 User.create!(
   name: "管理者",
@@ -22,27 +179,36 @@ User.create!(
   password: "password01",
   admin: true,
   image: open("./db/fixtures/image1.jpeg")
- )
- User.create!(
-   name: "ゲスト",
-   email: "guest@example.com" ,
-   password: "SecureRandom.urlsafe_base64",
-   image: open("./db/fixtures/image1.jpeg")
-  )
-  User.create!(
-    name: "ゲスト管理者",
-    email: "guest_admin@example.com" ,
-    password: "SecureRandom.urlsafe_base64",
-    admin: true,
-    image: open("./db/fixtures/image1.jpeg")
+)
+User.create!(
+  name: "ゲスト",
+  email: "guest@example.com" ,
+  password: "SecureRandom.urlsafe_base64",
+  image: open("./db/fixtures/image1.jpeg")
+)
+User.create!(
+  name: "ゲスト管理者",
+  email: "guest_admin@example.com" ,
+  password: "SecureRandom.urlsafe_base64",
+  admin: true,
+  image: open("./db/fixtures/image1.jpeg")
+)
 
-   )
+User.create!(
+  name: "リョウマルヤマ",
+  email: "RyoMaruyama@example.com" ,
+  password: "password",
+  description: :"ああああああああああああああああああああああああああああああああああああああああああああああ",
+  image: open("./db/fixtures/line_106517040313220.jpg")
+)
 
- Community.create!(
-  name: "野球小僧",
-  description: "野球好き集まれ!プレイボール！！",
-  user_id: 1,
-  image: open("./db/fixtures/81fs+JgzeaL.jpg")
+
+
+Community.create!(
+ name: "野球小僧",
+ description: "野球好き集まれ!プレイボール！！",
+ user_id: 1,
+ image: open("./db/fixtures/81fs+JgzeaL.jpg")
 )
 
 Community.create!(
@@ -109,7 +275,7 @@ Community.create!(
 Community.create!(
  name: "集まれ！暴力の森",
  description: "凶暴な人集まれ！！",
- user_id: 11,
+ user_id: 25,
  image: open("./db/fixtures/download23.jpeg")
 )
 

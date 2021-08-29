@@ -6,7 +6,7 @@
 <br>
 
   <%= search_form_for @q, url: search_communities_path do |f| %>
-    <%= f.label :name_cont, 'コミュニティ名で検索'%>
+    <%= f.label :name_cont, 'コミュニティ名を検索'%>
     <%= f.search_field :name_cont, placeholder: "あいまい検索できます", class: "search_field" %>
   <br>
     <i class="fas fa-search"></i><%= f.submit '検索' %>
@@ -40,7 +40,7 @@
         <% else %>
         <td><%= image_tag "Noname.png", class:"community_index_icon" %></td>
         <% end %>
-        <td nowrap><%= community.name %></td>
+        <td style = "color:#3399FF"><%= community.name %></td>
         <td nowrap><%= community.description %></td>
         <td nowrap><%= link_to community.user.name,user_path(community.user.id)%></td>
         <td nowrap><%= community.created_at.strftime("%Y-%m-%d")%></td>
@@ -58,14 +58,14 @@
        <% end %>
 
        <% if current_user.admin?%>
-       <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていいの?' } %></td>
+       <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていい?' } %></td>
        <td><%= link_to '詳しく', community, class: 'btn btn-info' if community.comments.count >= 30  %></td>
        <% end %>
 
          <% if community.user == current_user  %>
            <td><%= link_to '詳しく', community,class: 'btn btn-info' if community.comments.count >= 30  %></td>
           <td><%= link_to '編集', edit_community_path(community), class: 'btn btn-success' %></td>
-          <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていいの?' } %></td>
+          <td><%= link_to '削除', community,  class: 'btn btn-warning',method: :delete, data: { confirm: '本当に消しちゃっていい?' } %></td>
         <% end %>
       </tr>
     <% end %>

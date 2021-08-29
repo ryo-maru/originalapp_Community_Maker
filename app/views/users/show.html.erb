@@ -22,7 +22,7 @@
 <h3><%= link_to '管理者画面へ移動' , rails_admin_path, class: 'btn btn-default' %></h3>
 <% end %>
 <div>
-  <%= link_to 'プロフィール編集', edit_user_registration_path, class: 'btn btn-default' %>
+  <%= link_to 'プロフィール編集', edit_user_registration_path, class: 'btn btn-default' unless  @user.id != current_user.id||current_user.id==23 || current_user.id==24  %>
 </div>
 <br>
 <div>
