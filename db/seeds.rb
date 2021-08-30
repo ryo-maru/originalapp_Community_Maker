@@ -177,6 +177,7 @@ User.create!(
   name: "管理者",
   email: "admin@example.jp" ,
   password: "password01",
+  description: :"こんにちは、管理者です",
   admin: true,
   image: open("./db/fixtures/image1.jpeg")
 )
@@ -184,12 +185,14 @@ User.create!(
   name: "ゲスト",
   email: "guest@example.com" ,
   password: "SecureRandom.urlsafe_base64",
+  description: :"こんにちは、ゲストです",
   image: open("./db/fixtures/image1.jpeg")
 )
 User.create!(
   name: "ゲスト管理者",
   email: "guest_admin@example.com" ,
   password: "SecureRandom.urlsafe_base64",
+  description: :"こんにちは、ゲスト管理者です",
   admin: true,
   image: open("./db/fixtures/image1.jpeg")
 )

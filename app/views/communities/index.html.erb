@@ -39,7 +39,7 @@
         <% else %>
         <td><%= image_tag "Noname.png", class:"community_index_icon" %></td>
         <% end %>
-        <td nowrap><%= link_to community.name,community_path(community.user.id), class: "btn btn--orange" %></td>
+        <td nowrap><%= link_to community.name,community, class: "btn btn--orange" %></td>
         <td nowrap><%= truncate(community.description, length: 30) %></td>
         <td nowrap><%= link_to community.user.name,user_path(community.user.id)%></td>
         <td nowrap><%= community.created_at.strftime("%Y-%m-%d")%></td>

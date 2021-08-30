@@ -6,8 +6,12 @@
 </h3>
 
 <h3>
-  <strong>コミュニティ説明:</strong>
+  <strong >コミュニティ説明:</strong>
   <%= @community.description %>
+</h3>
+<h3>
+  <strong >コミュニティ作成者:</strong>
+  <%= link_to @community.user.name,user_path(@community.user.id) %>
 </h3>
 <br>
 <% if @community.image? %>
