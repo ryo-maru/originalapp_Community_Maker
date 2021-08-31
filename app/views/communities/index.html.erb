@@ -11,7 +11,7 @@
   <br>
     <i class="fas fa-search"></i><%= f.submit '検索' %>
   <% end %>
-
+<br>
 <div class='p-top__paginate'><%= paginate(@communities) %></div>
 <%= link_to '+ コミュニティを作る', new_community_path, class: "btn btn-gradient" %>
 <br>
