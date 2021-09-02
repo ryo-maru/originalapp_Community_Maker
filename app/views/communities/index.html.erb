@@ -42,7 +42,7 @@
         <td nowrap><%= link_to community.name,community, class: "btn btn--orange" %></td>
         <td nowrap><%= truncate(community.description, length: 30) %></td>
         <% if community.user == current_user  %>
-        <td nowrap><%= link_to community.user.name,user_path(community.user.id), class: "btn btn--orange"%></td>
+        <td nowrap><%= link_to community.user.name,user_path(community.user.id), class: "btn btn--create_user"%></td>
         <% else %>
         <td nowrap><%= link_to community.user.name,user_path(community.user.id)%></td>
         <% end %>
