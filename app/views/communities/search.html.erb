@@ -12,7 +12,7 @@
       <th nowrap>作成者</th>
       <th nowrap>作成日</th>
       <th nowrap>コメント<i class="fas fa-comment-dots"></i></th>
-      <th nowrap>いいね!<i class="fas fa-heart"></i></th>
+      <th nowrap>いいね!<i class="fas fa-heart fa-spin style = "color:#FF0033;""></i></th>
       <th nowrap>参加者<i class="fas fa-user"></i></th>
     </tr>
   </thead>
@@ -28,7 +28,11 @@
         <% end %>
         <td nowrap><%= link_to community.name,community, class: "btn btn--orange" %></td>
         <td nowrap><%= truncate(community.description, length: 30) %></td>
+        <% if community.user == current_user  %>
+        <td nowrap><%= link_to community.user.name,user_path(community.user.id), class: "btn btn--create_user"%></td>
+        <% else %>
         <td nowrap><%= link_to community.user.name,user_path(community.user.id)%></td>
+        <% end %>
         <td nowrap><%= community.created_at.strftime("%Y-%m-%d")%></td>
         <td nowrap><%= community.comments.count%></td>
         <td nowrap><%= community.favorites.count%></td>
