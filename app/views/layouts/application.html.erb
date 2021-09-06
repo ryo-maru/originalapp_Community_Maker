@@ -36,10 +36,10 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Top", root_path %></li>
             <li><%= link_to "コミュニティ一覧", communities_path %></li>
-            <li><%= link_to 'ユーザー覧', users_path %></li>
+            <li><%= link_to '愉快な仲間達', users_path %></li>
             <li><%= link_to "マイページ", user_path(current_user.id) %></li>
-            <li><%= link_to "お気に入り", favorites_path %></li>
-            <li><%= link_to "参加コミュニティ", members_path %></li>
+            <li><%= link_to "いいね!したコミュニティ", favorites_path %></li>
+            <li><%= link_to "参加中のコミュニティ", members_path %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <% else %>
           </ul>
