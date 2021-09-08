@@ -14,6 +14,9 @@ gem 'faker'
 gem 'ransack'
 gem 'kaminari'
 gem 'font-awesome-rails'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.5'
@@ -69,6 +72,7 @@ group :development do
   #gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end
 
 group :test do

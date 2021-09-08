@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   get 'relationships/create'
   get 'relationships/destroy'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
   resources :communities do
     collection do
       post :confirm
@@ -33,5 +36,7 @@ Rails.application.routes.draw do
  end
 
  get '/about', to: 'tops#about'
+
+
 
 end
