@@ -31,12 +31,8 @@
 <%= link_to 'ゲスト管理者ログイン（閲覧用）', users_guest_admin_sign_in_path, class: "btn btn--orange btn--radius", method: :post %>
 <br>
 <br>
-<p><%= notice %><%= alert %></p>
-<% if user_signed_in? %>
-  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Googleでサインアップしてね', user_google_omniauth_authorize_path, class: "btn btn--orange btn--radius", method: :post %>
-<% end %>
+  <%= link_to 'Googleアカウントでログイン', user_google_omniauth_authorize_path, class: "btn btn--orange btn--radius", method: :post %>
+
 
 <div class="banner_icon">
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
